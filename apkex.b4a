@@ -1,0 +1,485 @@
+﻿Version=6.8
+NumberOfModules=4
+Module1=Starter
+Module2=KeyValueStore
+Module3=ClsCheckList
+Module4=ClsExplorer
+Build1=APK_Extractor,com.apex,Full
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="18" android:targetSdkVersion="22"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~<uses-permission ~\n~android:name="android.launcher.permission.INSTALL_SHORTCUT"/>~\n~<uses-permission ~\n~ android:name="android.permission.GET_PACKAGE_SIZE"/>~\n~<uses-permission~\n~  android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>~\n~<uses-permission~\n~  android:name="android.permission.READ_EXTERNAL_STORAGE"/>~\n~<uses-permission~\n~  android:name="android.permission.WRITE_SECURE_SETTINGS"/>~\n~<uses-permission~\n~ android:name="android.permission.PACKAGE_USAGE_STATS"/>~\n~<uses-permission~\n~  android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>~\n~  )~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~SetApplicationAttribute(android:theme, "@style/MyAppTheme")~\n~'SetApplicationAttribute(android:theme, "@style/Theme.AppCompat")~\n~~\n~CreateResource(values, theme.xml,~\n~<resources>~\n~    <style name="MyAppTheme" parent="Theme.AppCompat">~\n~        <item name="colorPrimary">#37474F</item>~\n~        <item name="colorPrimaryDark">#37474F</item>~\n~        <item name="colorAccent">#76FF03</item>~\n~        <item name="windowNoTitle">true</item>~\n~        <item name="windowActionBar">false</item>~\n~    </style>~\n~</resources>~\n~)~\n~'End of default text.~\n~
+IconFile=
+NumberOfFiles=6
+File1=2.bal
+File2=add-3.png
+File3=info.png
+File4=menu-1.png
+File5=Minus Red Button.png
+File6=minus.png
+NumberOfLibraries=19
+Library1=core
+Library2=appcompat
+Library3=materialcolors
+Library4=circlebutton
+Library5=customtoast
+Library6=materialdialogs
+Library7=dialogs
+Library8=phone
+Library9=phonestatelistener
+Library10=reflection
+Library11=javaobject
+Library12=randomaccessfile
+Library13=loadingviews
+Library14=scrollview2d
+Library15=animation
+Library16=betterdialogs
+Library17=b4xencryption
+Library18=maskededittext
+Library19=sql
+@EndOfDesignText@
+'APEX Source Code 1.4 by D.Trojan(trOw)
+#Region  Project Attributes 
+	#ApplicationLabel: APK Extractor
+	#VersionCode: 5
+	#VersionName: 1.1
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: portrait 
+	#CanInstallToExternalStorage: False
+#End Region
+#AdditionalRes:C:\Users\trow\Documents\Apps\Worground\APK Extractor\res
+#Extends: android.support.v7.app.ActionBarActivity
+#Extends: de.amberhome.materialdialogs.MaterialDialogsActivity
+'#AdditionalJar: C:\Users\trow\Documents\Apps\Worground\APK Extractor\jdbc_driver\sqlite-jdbc-3.7.2
+'#AdditionalJar: bcprov-jdk15on-154
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Private pak As PackageManager
+	Dim tim As Timer
+	
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+	Private applist,extra,extra2,finish As List 
+	Private toolbar As ACToolBarDark
+	Dim ABHelper As ACActionBar
+	Dim AC As AppCompat
+	Private ListView1 As ListView
+	Dim args(1) As Object
+	Dim Obj1, Obj2, Obj3 As Reflector
+	Dim size,flags As Int
+	Private name,apath,l,Types(1),packName As String
+	Private icon As BitmapDrawable
+	Private mcl As MaterialColors
+	Private ab1 As ACButton
+	Private ab2 As ACButton
+	Private Panel1 As Panel
+	Private Label1 As Label
+	Private lvt As LVLineWithText
+	Private iv1 As ImageView
+	Private Label2 As Label
+	Private Label3 As Label
+	Private Panel2 As Panel
+	Private ab3 As ACButton
+'	Private pb1 As ProgressBar
+	Private Label5 As Label
+	Dim count As Int
+	Private md As MaterialDialogBuilder
+	Private Label6 As Label
+	Dim bdia As BetterDialogs
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	
+	Activity.LoadLayout("2")
+	toolbar.SetAsActionBar
+'	'toolbar.Menu.Add(0, 0, "Dummy", Null)
+''	toolbar.InitMenuListener
+	toolbar.PopupTheme=toolbar.THEME_DARK
+	toolbar.Title=pak.GetApplicationLabel("com.apex")
+	toolbar.SubTitle="Native app export"
+	ABHelper.Initialize
+	extra.Initialize
+	extra2.Initialize
+	finish.Initialize
+	md.Initialize("md")
+	'Dim xml As XmlLayoutBuilder
+	Dim bd,bd1,bd2 As BitmapDrawable
+	bd1.Initialize(LoadBitmap(File.DirAssets,"menu-1.png"))
+	Activity.AddMenuItem3("Menu", "Menu", bd1.Bitmap, True)
+	bd.Initialize(LoadBitmap(File.DirAssets,"info.png"))
+	Activity.AddMenuItem2("Info", "inf", bd.Bitmap)
+	bd2.Initialize(LoadBitmap(File.DirAssets,"Minus Red Button.png"))
+	Activity.AddMenuItem2("Exit", "close",bd2.Bitmap)
+	'############################################################# List Methods #####################
+	Dim l1,l2 As Label 
+	l1=ListView1.TwoLinesAndBitmap.Label
+	l2=ListView1.TwoLinesAndBitmap.SecondLabel
+	l1.TextSize=19
+	l1.TextColor=mcl.md_black_1000
+	l2.TextSize=14
+	l2.TextColor=mcl.md_blue_400
+	ListView1.TwoLinesAndBitmap.ItemHeight=70dip
+	ListView1.TwoLinesAndBitmap.ImageView.Height=50dip
+	ListView1.Color=Colors.Transparent
+	'########################################################### Button & label Methods #######################
+	Panel1.Visible=False
+	Panel2.Visible=False
+	lvt.Visible=False
+	ab1.Text="Export"
+	ab1.ButtonColor=mcl.md_amber_300
+	ab2.Text="Cancel"
+	ab2.ButtonColor=mcl.md_brown_400
+	ab3.Text="cancel"
+	ab3.ButtonColor=Colors.ARGB(200,255,255,255)
+	Activity.Color=mcl.md_white_1000
+	'########################################################## Extractor Init and Methods #############
+	tim.Initialize("tim",1000)
+	count=0
+	apps_start
+End Sub
+
+Sub Activity_Resume
+	
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+'	tim.Enabled=False
+End Sub
+Sub Activity_BackKeyPressed As Boolean
+	bdia.CloseDialog(DialogResponse.CANCEL)
+	Return(True)
+End Sub
+
+Sub inf_click
+	md_build
+	'Msgbox(pak.GetApplicationLabel("com.apex")&", Version: "&pak.GetVersionName("com.apex")&", build: "&pak.GetVersionCode("com.apex"),"About "&pak.GetApplicationLabel("com.apex"))
+End Sub
+Sub close_click
+	ExitApplication
+End Sub
+
+Sub tim_Tick
+	count=count+1
+	'ProgressDialogShow("Export ->")
+	lvt.Visible=True
+	lvt.Value=count*10*1.5
+    If count = 3 Then
+		tim.Enabled=False
+		count=0
+		 ini_extract
+	End If
+End Sub
+
+Sub ListView1_ItemClick (Position As Int, Value As Object) 
+	Dim filename As String 
+	For Each d As String In extra
+		packName=d
+		Log("packname. "&d)
+	If Value=packName Then
+		icon=pak.GetApplicationIcon(packName)
+		size=File.Size(GetParentPath(GetSourceDir(GetActivitiesInfo(packName))),GetFileName(GetSourceDir(GetActivitiesInfo(packName))))
+		apath=get_respath(d)
+		name=pak.GetApplicationLabel(d)
+		filename=d
+		Log(filename)
+		'Panel1.Visible=True	
+			Label1.Text=name
+			iv1.Bitmap=icon.Bitmap
+			Label2.Text=filename
+			Label6.Text=apath
+			Label5.Text="size: "&FormatFileSize(size)
+			Label3.Text="Path: "&apath
+			extra2.Clear
+			Log("-------clear-----")
+			extra2.Add(name)
+			extra2.Add(d)
+			Log("->add: "&d)
+			
+		ex_pan		
+		'list_files
+	End If
+		'filename=GetParentPath(GetSourceDir(GetActivitiesInfo(d)))
+	Next
+End Sub
+
+Sub ini_extract
+	lvt.Visible=True
+	Dim buffer(1024) As Byte
+	Dim it As InputStream
+	Dim out As OutputStream
+	Dim date As String = DateTime.Date(DateTime.Now)
+	Dim s As String = extra2.Get(1)
+	Log("pak: "&s)
+	Dim b As String = extra2.Get(0)
+	Log("Name: "&b)
+	name=pak.GetApplicationLabel(s)
+		Log("copy value: "&s)
+	If File.IsDirectory(File.DirRootExternal&"/APEX/backups",name&".apk") Then
+		File.Copy(GetParentPath(GetSourceDir(GetActivitiesInfo(s))),GetFileName(GetSourceDir(GetActivitiesInfo(s))),File.DirRootExternal&"/APEX/backups",s&".apk")
+		end_extract
+	Else
+		File.MakeDir(File.DirRootExternal,"APEX/backups")
+		File.Copy(GetParentPath(GetSourceDir(GetActivitiesInfo(s))),GetFileName(GetSourceDir(GetActivitiesInfo(s))),File.DirRootExternal&"/APEX/backups",s&".apk")
+		end_extract
+	End If		
+
+End Sub
+Sub end_extract
+	tim.Enabled=False
+	lvt.Visible=False
+	Dim s As String = extra2.Get(1)
+	Log("pak: "&s)
+	name=pak.GetApplicationLabel(s)
+	If File.Exists(File.DirRootExternal&"/APEX/backups",s&".apk") Then
+		ex_pan2
+		end_msg
+	End If
+End Sub
+
+Sub end_msg
+	'ProgressDialogHide
+	Dim lv1 As ListView
+	lv1.Initialize("lv1")
+	lv1.Enabled=True
+	lv1.Color=Colors.Transparent
+	Dim l1,l2 As Label 
+	l1.Initialize("l1")
+	l2.Initialize("l2")
+	l1=lv1.TwoLinesAndBitmap.Label
+	l2=lv1.TwoLinesAndBitmap.SecondLabel
+	l1.TextSize=14
+	l1.TextColor=Colors.White
+	l2.TextSize=12
+	l2.TextColor=mcl.md_light_blue_500
+	Dim s As String = extra2.Get(1)
+	name=s
+	icon=pak.GetApplicationIcon(s)
+	finish=File.ListFiles(File.DirRootExternal&"/APEX/backups")
+		For u = 0 To finish.Size-1
+			Log(finish.Get(u))
+		
+		Next
+	'Msglv1.AddSingleLine("Export to: SD/APEX/backups/"&name&".apk")
+	lv1.AddTwoLinesAndBitmap("Export to:","/APEX/backups/"&name&".apk",icon.Bitmap)
+	bdia.CustomDialog("Export log:",100dip,50dip,lv1,300dip,80dip,20dip,Colors.Transparent,"Go to","Ok","",False,"bdia")
+End Sub
+
+Sub int_folder
+	
+End Sub
+
+Sub md_build
+	md.Theme(md.THEME_DARK)
+	md.CanceledOnTouchOutside(True)
+	md.Cancelable(True)
+	md.ContentColor(mcl.md_white_1000)
+	md.content(pak.GetApplicationLabel("com.apex")&", Version: "&pak.GetVersionName("com.apex")&", build: "&pak.GetVersionCode("com.apex")&" Programmed in: Basic4A, Android and Java. Java is a free OpenSurce software and is subject to the free Creative public license. Android is under the google license, all associated names and content are protected by the google Inc. software agreement. For more information, visit www.google.com/license. All rights to the code and the design are reserved to BaTTCaTT and its owners..Code by D. Trojan, published by SuloMedia™ www.battcatt.bplaced.net for Recent Infos. All Rights Reserved APEX ©2017")
+	'md.Build.EnableActionButton("bu",True)
+	md.PositiveText("Ok")
+	md.ButtonStackedGravity(md.GRAVITY_END)
+	md.ForceStacking(True)
+	md.ContentGravity(md.GRAVITY_START)
+	md.Title("About APEX:")
+	md.PositiveColor(mcl.md_lime_A200)
+	md.show
+End Sub
+
+Sub md_ButtonPressed (Dialog As MaterialDialog, Action As String)
+
+	Select Action
+		Case Dialog.ACTION_POSITIVE
+			'Log("Positive Button pressed")
+			'ToastMessageShow(Action, False)
+		Case Dialog.ACTION_NEGATIVE
+			'Log("Negative Button pressed")
+			'ToastMessageShow(Action, False)
+		Case Dialog.ACTION_NEUTRAL
+			'Log("Neutral Button pressed")
+			'ToastMessageShow(Action, False)
+	End Select
+End Sub
+Sub ab2_Click
+	ex_pan
+End Sub
+
+Sub ab1_Click
+	'ProgressDialogShow("export apk...")
+	If tim.Enabled=False Then
+		tim.Enabled=True
+		ex_pan2
+		
+	Else
+		tim.Enabled=False  
+		ex_pan2
+		ti_start
+	End If
+	
+End Sub
+
+Sub ti_start
+	tim.Enabled=True
+End Sub
+
+Sub ab3_Click
+	tim.Enabled=False
+	Panel2.Visible=False	
+End Sub
+
+Sub ex_pan
+	If Panel1.Visible=True Then
+		Panel1.Visible=False
+		ListView1.Enabled=True
+	Else
+		Panel1.Visible=True
+		ListView1.Enabled=False
+	End If
+End Sub 
+
+Sub ex_pan2
+	If Panel2.Visible=False Then
+		Panel1.Visible=False
+		Panel2.Visible=True
+		ListView1.Enabled=False
+		Else
+			Panel2.Visible=False
+		ListView1.Enabled=True
+	End If
+End Sub
+
+
+Sub apps_start
+	
+	ListView1.Clear
+	extra.Clear
+	applist=pak.GetInstalledPackages
+	Obj1.Target = Obj1.GetContext
+	Obj1.Target = Obj1.RunMethod("getPackageManager") ' PackageManager
+	Obj2.Target = Obj1.RunMethod2("getInstalledPackages", 0, "java.lang.int") ' List<PackageInfo>
+	size = Obj2.RunMethod("size")
+	For i = 0 To size -1
+		Obj3.Target = Obj2.RunMethod2("get", i, "java.lang.int") ' PackageInfo
+		size = Obj2.RunMethod("size")
+		Obj3.Target = Obj3.GetField("applicationInfo") ' ApplicationInfo
+		flags = Obj3.GetField("flags")
+		packName = Obj3.GetField("packageName")
+		If Bit.And(flags, 1)  = 0 Then
+			'app is not in the system image
+			args(0) = Obj3.Target
+			Types(0) = "android.content.pm.ApplicationInfo"
+			name = Obj1.RunMethod4("getApplicationLabel", args, Types)
+			icon = Obj1.RunMethod4("getApplicationIcon", args, Types)
+			apath= GetParentPath(GetSourceDir(GetActivitiesInfo(packName)))
+			Dim total As String
+			total = File.Size(GetParentPath(GetSourceDir(GetActivitiesInfo(packName))),GetFileName(GetSourceDir(GetActivitiesInfo(packName))))
+			ListView1.AddTwoLinesAndBitmap2(name,packName&", "&FormatFileSize(total),icon.Bitmap,packName)
+			extra.Add(packName)
+		End If
+	Next
+End Sub
+
+Sub GetPermissions(Package As String) As String()
+	Dim r As Reflector
+	r.Target = r.GetContext
+	r.Target = r.RunMethod("getPackageManager")
+	'get PacakgeInfo
+	r.Target = r.RunMethod4("getPackageInfo", Array As Object(Package, 0x00001000), _
+      Array As String("java.lang.String", "java.lang.int"))
+	Dim permissions() As String
+	permissions = r.GetField("requestedPermissions")
+	If permissions = Null Then
+		Dim permissions(0) As String
+	End If
+	Return permissions
+End Sub
+Sub ConvertToTimeFormat(ms As Int) As String
+	Dim seconds, minutes As Int
+	seconds = Round(ms / 1000)
+	minutes = Floor(seconds / 60)
+	seconds = seconds Mod 60
+	Return NumberFormat(minutes, 1, 0) & ":" & NumberFormat(seconds, 2, 0) 'ex: 3:05
+End Sub
+Sub minutes_hours ( ms As Int ) As String
+	Dim val,hours,minutes As Int
+	val = ms
+	hours = Floor(val / 60)
+	minutes = val Mod 60
+	Return NumberFormat(hours, 1, 0) & ":" & NumberFormat(minutes, 2, 0)
+End Sub
+
+Sub FormatFileSize(Bytes As Float) As String
+   
+	Private Unit() As String = Array As String(" Byte", " KB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB")
+   
+	If Bytes = 0 Then
+		Return "0 Bytes"
+	Else
+		Private Po, Si As Double
+		Private I As Int
+		Bytes = Abs(Bytes)
+		I = Floor(Logarithm(Bytes, 1024))
+		Po = Power(1024, I)
+		Si = Bytes / Po
+		Return NumberFormat(Si, 1, 2) & Unit(I)
+	End If
+End Sub
+
+Sub GetFileName(FullPath As String) As String
+	Return FullPath.SubString(FullPath.LastIndexOf("/")+1)
+End Sub
+
+
+Sub GetParentPath(path As String) As String
+	Dim Path1 As String
+	If path = "/" Then
+		Return "/"
+	End If
+	L = path.LastIndexOf("/")
+	If L = path.Length - 1 Then
+		'Strip the last slash
+		Path1 = path.SubString2(0,L)
+	Else
+		Path1 = path
+	End If
+	L = path.LastIndexOf("/")
+	If L = 0 Then
+		L = 1
+	End If
+	Return Path1.SubString2(0,L)
+End Sub
+
+Sub GetActivitiesInfo(package As String) As Object
+	Dim r As Reflector
+	r.Target = r.GetContext
+	r.Target = r.RunMethod("getPackageManager")
+	r.Target = r.RunMethod3("getPackageInfo", package, "java.lang.String", 0x00000001, "java.lang.int")
+	Return r.GetField("applicationInfo")
+End Sub
+
+Sub GetSourceDir(AppInfo As Object) As String
+	Try
+		Dim r As Reflector
+		r.Target = AppInfo
+		Return r.GetField("sourceDir")
+	Catch
+		Return ""
+	End Try
+End Sub
+
+Sub get_respath(package As String) As Object
+	Dim r As Reflector
+	r.Target = r.GetContext
+	r.Target = r.RunMethod("getPackageManager")
+	r.Target = r.RunMethod3("getApplicationInfo", package, "java.lang.String", 0x00000001, "java.lang.int")
+	Return r.GetField("dataDir")
+End Sub
+
+
+Sub toolbar_NavigationItemClick
+	
+End Sub
