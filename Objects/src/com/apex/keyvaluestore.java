@@ -28,6 +28,7 @@ public anywheresoftware.b4a.sql.SQL _sql1 = null;
 public String _tempfolder = "";
 public String _tempfile = "";
 public com.apex.main _main = null;
+public com.apex.sett _sett = null;
 public com.apex.starter _starter = null;
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 2;BA.debugLine="Sub Class_Globals";

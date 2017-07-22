@@ -65,6 +65,7 @@ public boolean _bignoreevent = false;
 public boolean _busermovingpnl = false;
 public boolean _bwaitforscroll = false;
 public com.apex.main _main = null;
+public com.apex.sett _sett = null;
 public com.apex.starter _starter = null;
 public static class _typresult{
 public boolean IsInitialized;

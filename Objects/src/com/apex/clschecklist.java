@@ -58,6 +58,7 @@ public int _paint_extended = 0;
 public int _paint_checked = 0;
 public int _paint_pressed = 0;
 public com.apex.main _main = null;
+public com.apex.sett _sett = null;
 public com.apex.starter _starter = null;
 public static class _typsortdata{
 public boolean IsInitialized;
