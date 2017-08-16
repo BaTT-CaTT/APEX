@@ -124,6 +124,7 @@ public class starter extends  android.app.Service{
 	}public anywheresoftware.b4a.keywords.Common __c = null;
 public com.apex.main _main = null;
 public com.apex.sett _sett = null;
+public com.apex.animator _animator = null;
 public static boolean  _application_error(anywheresoftware.b4a.objects.B4AException _error,String _stacktrace) throws Exception{
  //BA.debugLineNum = 27;BA.debugLine="Sub Application_Error (Error As Exception, StackTr";
  //BA.debugLineNum = 28;BA.debugLine="Return True";

@@ -6,5 +6,6 @@
         <item name="colorAccent">#76FF03</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+		<item name="windowActionModeOverlay">true</item>
     </style>
 </resources>

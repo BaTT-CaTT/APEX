@@ -1,57 +1,67 @@
 ﻿Version=6.8
-NumberOfModules=5
+NumberOfModules=6
 Module1=sett
 Module2=Starter
 Module3=KeyValueStore
 Module4=ClsCheckList
 Module5=ClsExplorer
-Build1=APK_Extractor,com.apex,Full
-ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="18" android:targetSdkVersion="22"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~<uses-permission ~\n~android:name="android.launcher.permission.INSTALL_SHORTCUT"/>~\n~<uses-permission ~\n~ android:name="android.permission.GET_PACKAGE_SIZE"/>~\n~<uses-permission~\n~  android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>~\n~<uses-permission~\n~  android:name="android.permission.READ_EXTERNAL_STORAGE"/>~\n~<uses-permission~\n~  android:name="android.permission.WRITE_SECURE_SETTINGS"/>~\n~<uses-permission~\n~ android:name="android.permission.PACKAGE_USAGE_STATS"/>~\n~<uses-permission~\n~  android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>~\n~  )~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~SetApplicationAttribute(android:theme, "@style/MyAppTheme")~\n~'SetApplicationAttribute(android:theme, "@style/Theme.AppCompat")~\n~~\n~CreateResource(values, theme.xml,~\n~<resources>~\n~    <style name="MyAppTheme" parent="Theme.AppCompat">~\n~        <item name="colorPrimary">#37474F</item>~\n~        <item name="colorPrimaryDark">#37474F</item>~\n~        <item name="colorAccent">#76FF03</item>~\n~        <item name="windowNoTitle">true</item>~\n~        <item name="windowActionBar">false</item>~\n~    </style>~\n~</resources>~\n~)~\n~'End of default text.~\n~
+Module6=Animator
+Build1=Extractor,com.apex,Full
+Build2=Build_A,com.apex
+Build3=Build_B,com.aextract.de,Full
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~<uses-permission ~\n~android:name="android.launcher.permission.INSTALL_SHORTCUT"/>~\n~<uses-permission ~\n~ android:name="android.permission.GET_PACKAGE_SIZE"/>~\n~<uses-permission~\n~  android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>~\n~<uses-permission~\n~  android:name="android.permission.READ_EXTERNAL_STORAGE"/>~\n~<uses-permission~\n~  android:name="android.permission.WRITE_SECURE_SETTINGS"/>~\n~<uses-permission~\n~ android:name="android.permission.PACKAGE_USAGE_STATS"/>~\n~<uses-permission~\n~  android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>~\n~ <uses-permission~\n~  android:name="android.permission.BROADCAST_PACKAGE_REMOVED"/> ~\n~  )~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~SetApplicationAttribute(android:theme, "@style/MyAppTheme")~\n~'SetApplicationAttribute(android:theme, "@style/Theme.AppCompat")~\n~~\n~CreateResource(values, theme.xml,~\n~<resources>~\n~    <style name="MyAppTheme" parent="Theme.AppCompat">~\n~        <item name="colorPrimary">#37474F</item>~\n~        <item name="colorPrimaryDark">#37474F</item>~\n~        <item name="colorAccent">#76FF03</item>~\n~        <item name="windowNoTitle">true</item>~\n~        <item name="windowActionBar">false</item>~\n~		<item name="windowActionModeOverlay">true</item>~\n~    </style>~\n~</resources>~\n~)~\n~'End of default text.~\n~
 IconFile=
-NumberOfFiles=8
+NumberOfFiles=19
 File1=2.bal
 File2=add-3.png
-File3=info.png
-File4=menu-1.png
-File5=Minus Red Button.png
-File6=minus.png
-File7=sett.bal
-File8=warning.png
-NumberOfLibraries=28
+File3=archive-3.png
+File4=blueprint.png
+File5=bookmark.png
+File6=checked-1.png
+File7=error.png
+File8=folder-4.png
+File9=info.png
+File10=menu-1.png
+File11=Minus Red Button.png
+File12=minus.png
+File13=save.png
+File14=sett.bal
+File15=settings.png
+File16=stopwatch-3.png
+File17=street-1.png
+File18=Tag.png
+File19=warning.png
+NumberOfLibraries=24
 Library1=core
 Library2=appcompat
 Library3=materialcolors
-Library4=circlebutton
-Library5=customtoast
-Library6=materialdialogs
-Library7=dialogs
-Library8=phone
-Library9=phonestatelistener
-Library10=reflection
-Library11=javaobject
-Library12=randomaccessfile
-Library13=loadingviews
-Library14=scrollview2d
-Library15=animation
-Library16=betterdialogs
-Library17=b4xencryption
-Library18=maskededittext
-Library19=sql
-Library20=intent id
-Library21=mlfiles
-Library22=fileselect
-Library23=bcmaterial
-Library24=body3d
-Library25=bodygl
-Library26=designsupport
-Library27=materiallockview
-Library28=materialdialogsv7
+Library4=customtoast
+Library5=materialdialogs
+Library6=dialogs
+Library7=phone
+Library8=reflection
+Library9=javaobject
+Library10=randomaccessfile
+Library11=loadingviews
+Library12=scrollview2d
+Library13=animation
+Library14=betterdialogs
+Library15=b4xencryption
+Library16=sql
+Library17=intent id
+Library18=fileselect
+Library19=bcmaterial
+Library20=mlfiles
+Library21=bodygl
+Library22=xmllayoutbuilder
+Library23=ss_slidingmenustandard
+Library24=materialdialogsv7
 @EndOfDesignText@
-'APEX Source Code 1.4 by D.Trojan(trOw)
+'APEX Source Code by D.Trojan(trOw)
 #Region  Project Attributes 
-	#ApplicationLabel: APEX(App Extractor)
-	#VersionCode: 9
-	#VersionName: 1.3
+	#ApplicationLabel: APK Backup(Pro)
+	#VersionCode: 17
+	#VersionName: 1.6
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait 
 	#CanInstallToExternalStorage: False
@@ -59,8 +69,7 @@ Library28=materialdialogsv7
 #AdditionalRes:C:\Users\trow\Documents\Apps\Worground\APK-Extractor\res
 #Extends: android.support.v7.app.ActionBarActivity
 #Extends: de.amberhome.materialdialogs.MaterialDialogsActivity
-'#AdditionalJar: C:\Users\trow\Documents\Apps\Worground\APK Extractor\jdbc_driver\sqlite-jdbc-3.7.2
-'#AdditionalJar: bcprov-jdk15on-154
+
 #Region  Activity Attributes 
 	#FullScreen: False
 	#IncludeTitle: True
@@ -83,26 +92,21 @@ Sub Globals
 	Dim AC As AppCompat
 	Private ListView1 As ListView
 	Dim args(1) As Object
-	Dim Obj1, Obj2, Obj3 As Reflector
-	Dim size,flags As Int
-	Private name,apath,l,Types(1),packName As String
-	Private icon As BitmapDrawable
+	Dim Obj1, Obj2, Obj3,obj4,obj5,obj6 As Reflector
+	Dim size,flags,csize,sdk,itime As Int
+	Private name,l,Types(1),packName,idt,apath As String
+	Private icon,icon2 As BitmapDrawable
 	Private mcl As MaterialColors
-	Private ab1 As ACButton
-	Private ab2 As ACButton
-	Private Panel1 As Panel
 	Private Label1 As Label
 	Private lvt As LVLineWithText
 	Private lvt2 As LVLineWithText
-	Private iv1 As ImageView
+	Private iv1,iv2 As ImageView
 	Private Label2 As Label
 	Private Label3 As Label
-	Private Panel2 As Panel
-	Private ab3 As ACButton
-'	Private pb1 As ProgressBar
 	Private Label5 As Label
+	Private Label7 As Label
 	Dim count As Int
-	Private md As MaterialDialogBuilder
+	Private md As  MaterialDialogBuilder
 	Private Label6 As Label
 	Private Bname As Label
 	Dim bdia As BetterDialogs
@@ -114,27 +118,41 @@ Sub Globals
 	Dim dlgFileExpl As ClsExplorer
 	Dim dir As String = File.DirRootExternal&"/APEX"
 	Private datas As KeyValueStore
-	Private apannel,bpannel As Panel
+	Private apannel,bpannel,listpan As Panel
 	Dim b1 As Button
+	Private appanel,Bdialog As CustomDialog
+	Private Aapanel,Bbpanel As Panel
+	Private bclp As bcLinearProgressView
+	Private Ccontent As Label
+	Private Cname As Label
+	Private Cpanel As Panel
+	Private Cpath As Label
+	Private bc1 As bcButton
+	Private fab1 As ACMenu
+	Dim xml As XmlLayoutBuilder
+	Private lvg As LVPlayBall
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
-	
 	Activity.LoadLayout("2")
 	toolbar.SetAsActionBar
 '	'toolbar.Menu.Add(0, 0, "Dummy", Null)
-''	toolbar.InitMenuListener
+	toolbar.InitMenuListener
 	toolbar.PopupTheme=toolbar.THEME_DARK
-	toolbar.Title=pak.GetApplicationLabel("com.apex")
-	toolbar.SubTitle="Version "&pak.GetVersionName("com.apex")
+	toolbar.Title=pak.GetApplicationLabel("com.aextract.de")
+	toolbar.SubTitle="Version "&pak.GetVersionName("com.aextract.de")
 	ABHelper.Initialize
+	ABHelper.ShowUpIndicator = False
+	toolbar.InitMenuListener
+	ABHelper.HomeVisible=True
 	extra.Initialize
 	extra2.Initialize
 	finish.Initialize
 	md.Initialize("md")
 	ie.Initialize
+	Aapanel.Initialize("Aapanel")
+	Bbpanel.Initialize("Bbpanel")
 	b1.Initialize("b1")
-	lvt2.Initialize("lvt2")
 	Bname.Initialize("bname")
 	Bpath.Initialize("Bpath")
 	Bcontent.Initialize("bcontent")
@@ -150,9 +168,9 @@ Sub Activity_Create(FirstTime As Boolean)
 	'Activity.AddMenuItem3("Menu", "Menu", bd1.Bitmap, True)
 	bd.Initialize(LoadBitmap(File.DirAssets,"info.png"))
 	Activity.AddMenuItem3("Info", "inf", bd.Bitmap,True)
-	Activity.AddMenuItem("Settings","sett")
+'	Activity.AddMenuItem("Settings","sett")
 	bd2.Initialize(LoadBitmap(File.DirAssets,"Minus Red Button.png"))
-	Activity.AddMenuItem3("Exit", "close",bd2.Bitmap,True)
+'	Activity.AddMenuItem("Exit", "close")
 	'############################################################# List Methods #####################
 	Dim l1,l2 As Label 
 	l1=ListView1.TwoLinesAndBitmap.Label
@@ -166,55 +184,81 @@ Sub Activity_Create(FirstTime As Boolean)
 	ListView1.Color=Colors.Transparent
 	SetDivider(ListView1, Colors.ARGB(255,255,255,255), 1dip)
 	'########################################################### Button & label Methods #######################
-	Panel1.Visible=False
-	Panel2.Visible=False
-	lvt.Visible=False
-	lvt.Color=Colors.Transparent
-	Panel2.Color=mcl.md_grey_800
-	ab1.Text="Export"
-	ab1.ButtonColor=mcl.md_amber_A700
-	ab1.TextColor=mcl.md_black_1000
-	ab2.Text="Cancel"
-	'ab2.ButtonColor=Colors.ARGB(
-	ab2.TextColor=mcl.md_black_1000
-	ab3.Text="cancel"
-	ab3.TextColor=mcl.md_red_700
-	ab3.ButtonColor=Colors.ARGB(200,255,255,255)
+
 	Activity.Color=Colors.ARGB(255,55,71,79)
 	'########################################################## Extractor Init and Methods #############
 	'############### Pannel Methods#####################################################################
 	'set the atrributes to the single Panel e.g size and colors
-	bpannel.Initialize("bpannel")
-	bpannel.Color=mcl.md_blue_grey_700
-	bpannel.AddView(Bname,0dip,1dip,100%x,60dip)
-	bpannel.AddView(Bcontent,0dip,40dip,100%x,40dip)
-	bpannel.AddView(Bpath,0dip,80dip,100%x,50dip)
-	'
-	'#################################################################Pannel EXTRA Methods##############
-	Bname.TextSize=18
-	Bname.TextColor=mcl.md_amber_500
-	Bpath.TextSize=18
-	Bpath.Gravity=Gravity.LEFT
-	Bpath.TextColor=mcl.md_cyan_A200
-	'Bcontent.Text="Export the APK to:"
-	Bcontent.TextColor=mcl.md_white_1000
-	Bcontent.Gravity=Gravity.LEFT
-	Bcontent.TextSize=15
-	Bcontent.Enabled=True
-	'b1.Text="Cancel"
+	iv1.Initialize("iv1")
+	iv2.Initialize("iv2")
+	iv1.Gravity=Gravity.FILL
+	iv2.Gravity=Gravity.FILL
+	Label1.Initialize("label1")
+	Label2.Initialize("label2")
+	Label5.Initialize("label5")
+	Label3.Initialize("label3")
+	Label4.Initialize("label4")
+	Label6.Initialize("label6")
+	Label7.Initialize("label7")
+	lvt.Initialize("lvt")
 	
+	Label1.TextSize=16
+	Label2.TextSize=16
+	Label5.TextSize=16
+	Label3.TextSize=16
+	Label7.TextSize=14
+	Label1.TextColor=mcl.md_amber_A400
+	Label2.TextColor=mcl.md_amber_A400
+	Label5.TextColor=mcl.md_amber_A400
+	Label3.TextColor=mcl.md_amber_A400
+	Label7.TextColor=mcl.md_amber_A400
+	
+	
+	'Aapanel.AddView(iv1,8%x,30dip,80dip,80dip)
+	Aapanel.AddView(Label1,15dip,10dip,90%x,20dip)
+	Aapanel.AddView(Label2,15dip,30dip,90%x,20dip)
+	Aapanel.AddView(Label5,15dip,50dip,90%x,20dip)
+	Aapanel.AddView(Label3,15dip,70dip,80%x,20dip)
+	Aapanel.AddView(Label7,15dip,90dip,80%x,75dip)
+	appanel.AddView(Aapanel,0dip,0dip,100%x,30%y)
+	'#########################B Panel methods###########################################################
+	
+	Bbpanel.AddView(Label4,5dip,0dip,260dip,40dip)
+	Bbpanel.AddView(lvt,10dip,40dip,99%x,40dip)
+	Bbpanel.AddView(Label6,5dip,80dip,99%x,40dip)
+'	Bbpanel.AddView(ab3,80dip,120dip,100dip,40dip)
+
+	'#################################################################Pannel EXTRA Methods##############
+	'Bcontent.Text="Export the APK to:"
+	Ccontent.TextColor=Colors.ARGB(190,255,255,255)
+	Ccontent.Gravity=Gravity.FILL
+	Ccontent.TextSize=18
+	Ccontent.Enabled=True
+	bc1.Text="Cancel"
+	bc1.Color=mcl.md_blue_grey_800
+	Cpanel.Color=mcl.md_grey_900
+	Cpanel.Visible=False
+	'###############Floating Action Buttzon#############################################################
+	Dim fb,ib,ia As BitmapDrawable
+
+	ia.Initialize(LoadBitmap(File.DirAssets,"settings.png"))
+	ib.Initialize(LoadBitmap(File.DirAssets,"folder-4.png"))
+	fb.Initialize(LoadBitmap(File.DirAssets,"add-3.png"))
 	'###################################################################################################
 	tim.Initialize("tim",1000)
+'	bcp.Autostart=False
+'	bcp.stop
 	count=0
 	apps_start
 End Sub
 
 Sub Activity_Resume
-	
+
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
-'	tim.Enabled=False
+	tim.Enabled=False
+	Activity.Finish
 End Sub
 Sub Activity_BackKeyPressed As Boolean
 	bdia.CloseDialog(DialogResponse.CANCEL)
@@ -223,6 +267,35 @@ Sub Activity_BackKeyPressed As Boolean
 	End If
 	Return bdia
 End Sub
+ 
+Sub Activity_CreateMenu(Menu As ACMenu)
+	Menu.Clear
+	Dim fb,ib,ia As BitmapDrawable
+	ia.Initialize(LoadBitmap(File.DirAssets,"settings.png"))
+	ib.Initialize(LoadBitmap(File.DirAssets,"folder-4.png"))
+	fb.Initialize(LoadBitmap(File.DirAssets,"error.png"))
+	Dim item As ACMenuItem
+	Menu.Add2(0, 0, "Settings", ia).ShowAsAction = item.SHOW_AS_ACTION_ALWAYS
+	Menu.Add2(1, 1, "Exit", Null).ShowAsAction = item.SHOW_AS_ACTION_ALWAYS
+
+End Sub
+ 
+Sub toolbar_MenuItemClick (Item As ACMenuItem)
+	If Item.Id=0 Then
+		StartActivity(sett)
+	End If
+	If Item.id=1 Then 
+		Dim res As Int 
+		res=Msgbox2("Exit APEX Backup ?","Exit?","Yes","","No",LoadBitmap(File.DirAssets,"Minus Red Button.png"))
+		If res=DialogResponse.POSITIVE Then 
+			ExitApplication
+		End If
+	End If
+End Sub
+
+Sub rebound
+
+End Sub
 
 Sub sett_click
 	StartActivity(sett)
@@ -230,33 +303,46 @@ End Sub
 
 Sub inf_click
 	md_build
-	'Msgbox(pak.GetApplicationLabel("com.apex")&", Version: "&pak.GetVersionName("com.apex")&", build: "&pak.GetVersionCode("com.apex"),"About "&pak.GetApplicationLabel("com.apex"))
 End Sub
+
 Sub close_click
 	ExitApplication
 End Sub
 
+Sub bc1_Click
+	ListView1.Enabled=False
+	Cpanel.SetVisibleAnimated(290,False)
+End Sub
+
 Sub tim_Tick
 	count=count+1
-	'ProgressDialogShow("Export ->")
-	lvt.Visible=True
-	lvt.Value=count*10*2.5
-    If count = 4 Then
+'	bcp.Progress=100/count*20
+'	
+'	If count>0 Then bcp.SecondaryProgress=20
+'	If count>1 Then bcp.SecondaryProgress=40
+'	If count>2 Then bcp.SecondaryProgress=60
+'	If count>3 Then bcp.SecondaryProgress=80
+'	If count>4 Then bcp.SecondaryProgress=90
+    If count = 5 Then
+'		bcp.SecondaryProgress=100
 		tim.Enabled=False
 		count=0
+		lvg.stopAnim
+'		bcp.stop
 		 ini_extract
 	End If
 End Sub
+
 Sub Listview1_ItemLongClick (Position As Int, Value As Object)
 	Dim lab As Label
 	lab.Initialize("lab")
-	Dim text As String = "Start the Application?"
-	lab.TextSize=18
-	lab.Gravity=Gravity.CENTER
+	Dim text As String = "Select one of the Options below for "&pak.GetApplicationLabel(Value)
+	lab.TextSize=15
+	lab.Gravity=Gravity.CENTER_HORIZONTAL
 	lab.TextColor=mcl.md_white_1000
 	lab.Text=text
 	Dim res As Int 
-	res =bdia.CustomDialog("Start?",200dip,150dip,lab,250dip,80dip,2,Colors.Transparent,"OK","","Cancel",False,"bdia")
+	res =bdia.CustomDialog("Application Extras:",300dip,100dip,lab,300dip,150dip,3,Colors.Transparent,"Start","Close","Deinstall",False,"bdia")
 	If res=DialogResponse.POSITIVE Then 
 	Dim i As Intent
 	i.Initialize(extra.Get(Position),"")
@@ -264,46 +350,56 @@ Sub Listview1_ItemLongClick (Position As Int, Value As Object)
 	Try
 		StartActivity(i)
 	Catch
-		'ToastMessageShow("no se puede",False)
+			Log(LastException.Message)
 	End Try
 	Else
 		ToastMessageShow("canceled..",False)
 		
-	End If 
+	End If
+	If res=DialogResponse.NEGATIVE Then
+		Dim i As Intent
+		i.Initialize("android.intent.action.DELETE","package:"&extra.Get(Position))
+		Try
+			StartActivity(i)
+		Catch
+			Log(LastException.Message)
+		End Try
+	Else
+		ToastMessageShow("deinstall failed!",False)
+		
+	End If
 End Sub
+
+
 
 Sub ListView1_ItemClick (Position As Int, Value As Object) 
 	Dim filename As String 
 	For Each d As String In extra
 		packName=d
-		Log("packname. "&d)
+		Log("packname: "&d)
 	If Value=packName Then
 		icon=pak.GetApplicationIcon(packName)
 		size=File.Size(GetParentPath(GetSourceDir(GetActivitiesInfo(packName))),GetFileName(GetSourceDir(GetActivitiesInfo(packName))))
-		apath=get_respath(d)
+		apath=get_respath(packName)
 		name=pak.GetApplicationLabel(d)
-	
 		filename=d
-		Log(filename)
 		'Panel1.Visible=True	
-			Label1.Text=name
-			iv1.Bitmap=icon.Bitmap
-			Label2.Text=filename
+			Label1.Text="Package: "&filename
+			Label2.Text="Version: "&pak.GetVersionName(packName)
 			Label6.Text=apath
-			Label5.Text="size: "&FormatFileSize(size)
-			
-			Label3.Text="Path: "&apath
+			Label5.Text="Size: "&FormatFileSize(size)
+			Label3.Text="Android SDK: "&sdk
+			Label7.Text="Lib: "&idt
 			extra2.Clear
 			Log("-------clear-----")
 			extra2.Add(name)
 			extra2.Add(d)
 			Log("->add: "&d)	
 		ex_pan		
-		'list_files
 	End If
-		'filename=GetParentPath(GetSourceDir(GetActivitiesInfo(d)))
 	Next
 End Sub
+
 
 Sub ini_extract
 	lvt.Visible=True
@@ -318,26 +414,36 @@ Sub ini_extract
 	d2=datas.GetSimple("0")
 	If datas.ContainsKey("0") Then 
 	master=d2
+	Else
+		master=d1
 	End If 
-		Log("copy value: "&s)
+		Log("copy value: "&master)
 	If File.Exists(master,s&".apk") Then
 		int_folder
 	Else
-		
+		ProgressDialogShow("copy APK in progress..")
 		File.Copy(GetParentPath(GetSourceDir(GetActivitiesInfo(s))),GetFileName(GetSourceDir(GetActivitiesInfo(s))),master,s&".apk")
 		end_extract
 	End If		
-
 End Sub
+
+Sub data_check
+	Dim fpath As String
+	If datas.ContainsKey("0") Then
+		fpath=datas.GetSimple("0")
+	Else
+
+	End If
+End Sub
+
 Sub end_extract
 	tim.Enabled=False
 	lvt.Visible=False
-		ex_pan2
+	ProgressDialogHide
 		end_msg
 End Sub
 
 Sub end_msg
-	'ProgressDialogHide
 	Dim lv1 As ListView
 	lv1.Initialize("lv1")
 	lv1.Enabled=True
@@ -365,14 +471,12 @@ Sub end_msg
 			Log(finish.Get(u))
 		
 		Next
-	'Msglv1.AddSingleLine("Export to: SD/APEX/backups/"&name&".apk")
 	SetDivider(ListView1, Colors.White, 1dip)
 	Label4.Text=name 
-	
+	Cpanel.SetVisibleAnimated(200,False)
 	Dim zu As Int 
 	lv1.AddTwoLinesAndBitmap(name&" exported to:",dirs,icon.Bitmap)
-	'lv1=GetActivitiesInfo(packName)
-	zu=bdia.CustomDialog("Export log:",250dip,100dip,lv1,220dip,120dip,20,Colors.Transparent,"Backups","Ok","",False,"bdia")
+	zu=bdia.CustomDialog("Export log:",100%x,100dip,lv1,250dip,150dip,20dip,Colors.Transparent,"","Ok","",False,"bdia")
 	If zu=DialogResponse.POSITIVE Then
 		
 		dlgFileExpl.Initialize(Activity, dirs, ".apk", True, False, "OK")
@@ -402,8 +506,7 @@ Sub md_build
 	md.CanceledOnTouchOutside(True)
 	md.Cancelable(True)
 	md.ContentColor(mcl.md_white_1000)
-	md.content(pak.GetApplicationLabel("com.apex")&", Version: "&pak.GetVersionName("com.apex")&" | Build: "&pak.GetVersionCode("com.apex")&"| Welcome to APK Extractor short APEX. It's easy and fast to use, simply tap an app and tap EXPORT. In the settings you can specify an individual path to save. By pressing and holding down an app in the list, this starts after a query Unless otherwise set APEX save your backups under 'sd / APEX /' the app does not need a root. Please note that you can not export system apps with APEX! All Rights Reserved APEX ©2017")
-	'md.Build.EnableActionButton("bu",True)
+	md.content(pak.GetApplicationLabel("com.aextract.de")&", Version: "&pak.GetVersionName("com.aextract.de")&" | Build: "&pak.GetVersionCode("com.aextract.de")&"| Welcome to APK Extractor short APEX. It's easy and fast to use, simply tap an app and tap EXPORT. In the settings you can specify an individual path to save. By pressing and holding down an app in the list, this starts after a query Unless otherwise set APEX save your backups under 'sd / APEX /' the app does not need a root. Please note that you can not export system apps with APEX! All Rights Reserved APEX ©2017")
 	md.PositiveText("Ok")
 	md.ButtonStackedGravity(md.GRAVITY_Start)
 	md.ForceStacking(True)
@@ -413,23 +516,16 @@ Sub md_build
 	md.show
 End Sub
 
-Sub md_ButtonPressed (Dialog As MaterialDialog, Action As String)
+Sub md_ButtonPressed (Dialog As MaterialDialog , Action As String)
 
 	Select Action
 		Case Dialog.ACTION_POSITIVE
-			'Log("Positive Button pressed")
-			'ToastMessageShow(Action, False)
+			ToastMessageShow("Copyright 2017 BaTT-CaTT",False)
 		Case Dialog.ACTION_NEGATIVE
-			'Log("Negative Button pressed")
-			'ToastMessageShow(Action, False)
+			ToastMessageShow("Copyright 2017 BaTT-CaTT",False)
 		Case Dialog.ACTION_NEUTRAL
-			'Log("Neutral Button pressed")
-			'ToastMessageShow(Action, False)
+			ToastMessageShow("Copyright 2017 BaTT-CaTT",False)
 	End Select
-End Sub
-
-Sub ab2_Click
-	ex_pan
 End Sub
 
 Sub file_check
@@ -446,32 +542,48 @@ Sub file_check
 		int_folder
 	Else
 		start
-		ex_pan2
+	
 	End If  
 End Sub 
 
 Sub ab1_Click
-	Dim res As Int
-	Bname.Enabled=True 
-	Bpath.Enabled=True 
-
+	Bname.Enabled=True
+	Bpath.Enabled=True
+	lvt.Visible=False
+	Bpath.Gravity=Gravity.CENTER_HORIZONTAL
 	Bname.Text=extra2.Get(0)
 	Bpath.Text="to: "&datas.GetSimple("0")
 	Bcontent.Text=Label5.text&", "&extra2.Get(1)
-	dias.AddView(bpannel,90%x,20%y)
-	dias.Show("Backup the app?","Yes","","Cancel",icon.Bitmap)
+	Label6.text=Bpath.Text
+	Label4.Text=Bname.text
+	Label6.TextSize=16
+	Label4.TextSize=18
+	Label4.TextColor=mcl.md_amber_400
+	Label6.TextColor=mcl.md_light_blue_A400
+	Label4.Gravity=Gravity.CENTER_HORIZONTAL
+	'Label4.Gravity=Gravity.CENTER_HORIZONTAL
+	dias.AddView(Bbpanel,85%x,25%y)
+	dias.Show("Backup the app?","Yes","Cancel","Set Path...",icon.Bitmap)
 	If dias.Response = DialogResponse.POSITIVE Then
 		file_check
 	Else
-		ex_pan
+		If dias.Response=DialogResponse.NEGATIVE Then 
+			CallSubDelayed(sett,"call_start")
+		Else
+			ToastMessageShow("caceled...",False)
+		End If 
 	End If
-	
+
 End Sub
 
 Sub start
 	If tim.Enabled=False Then
 		tim.Enabled=True
-		lvt.Visible=True
+		Ccontent.Text=Bname.Text
+		Cpanel.SetVisibleAnimated(150,True)
+		lvg.startAnim
+	
+'		bcp.start
 	Else
 		tim.Enabled=False
 		ti_start
@@ -480,32 +592,25 @@ End Sub
 
 Sub ti_start
 	tim.Enabled=True
-End Sub
-
-Sub ab3_Click
-	tim.Enabled=False
-	Panel2.Visible=False	
+	tim_Tick
 End Sub
 
 Sub ex_pan
-	If Panel1.Visible=True Then
-		Panel1.Visible=False
-		ListView1.Enabled=True
-	Else
-		Panel1.Visible=True
-		ListView1.Enabled=False
+	Dim s As String = extra2.Get(1)
+	Log("EXPAN: "&s)
+	name=pak.GetApplicationLabel(s)
+	Log(pak_info(s))
+	appanel.Show(name,"Backup APK","Exit","",icon.Bitmap)
+	If appanel.Response=DialogResponse.POSITIVE Then 
+		ab1_Click
 	End If
 End Sub 
 
 Sub ex_pan2
-	If Panel2.Visible=False Then
-		Panel1.Visible=False
-		Panel2.Visible=True
-		ListView1.Enabled=False
-		Else
-			Panel2.Visible=False
-		ListView1.Enabled=True
-	End If
+	
+	Bdialog.AddView(Bbpanel,5dip,0,100%x,30%y)
+	Bdialog.Show("Exporting...","","","",LoadBitmap(File.DirAssets,"warning.png"))
+		'Panel2.Visible=False
 End Sub
 
 
@@ -516,27 +621,43 @@ Sub apps_start
 	applist=pak.GetInstalledPackages
 	Obj1.Target = Obj1.GetContext
 	Obj1.Target = Obj1.RunMethod("getPackageManager") ' PackageManager
-	Obj2.Target = Obj1.RunMethod2("getInstalledPackages", 0, "java.lang.int") ' List<PackageInfo>
+	Obj2.Target = Obj1.RunMethod2("getInstalledPackages", 0, "java.lang.int")
 	size = Obj2.RunMethod("size")
+	
 	For i = 0 To size -1
 		Obj3.Target = Obj2.RunMethod2("get", i, "java.lang.int") ' PackageInfo
 		size = Obj2.RunMethod("size")
 		Obj3.Target = Obj3.GetField("applicationInfo") ' ApplicationInfo
+		idt= Obj3.GetField("nativeLibraryDir")
 		flags = Obj3.GetField("flags")
 		packName = Obj3.GetField("packageName")
+		sdk= Obj3.GetField("targetSdkVersion")
+		apath= Obj3.GetField("sourceDir")
+		'itime=Obj2.RunMethod("firstInstallTime")
 		If Bit.And(flags, 1)  = 0 Then
 			'app is not in the system image
 			args(0) = Obj3.Target
 			Types(0) = "android.content.pm.ApplicationInfo"
 			name = Obj1.RunMethod4("getApplicationLabel", args, Types)
 			icon = Obj1.RunMethod4("getApplicationIcon", args, Types)
-			apath= GetParentPath(GetSourceDir(GetActivitiesInfo(packName)))
+			'itime= Obj1.RunMethod4("getfirstInstallTime",args,Types)
 			Dim total As String
 			total = File.Size(GetParentPath(GetSourceDir(GetActivitiesInfo(packName))),GetFileName(GetSourceDir(GetActivitiesInfo(packName))))
-			ListView1.AddTwoLinesAndBitmap2(name,packName&", "&FormatFileSize(total),icon.Bitmap,packName)
+			ListView1.AddTwoLinesAndBitmap2(name,GetParentPath(apath),icon.Bitmap,packName)
 			extra.Add(packName)
+			
 		End If
 	Next
+End Sub
+
+Sub pak_info(path As String)
+	Dim r, r2 As Reflector
+	Dim fullpath As String
+	fullpath =path   
+	r.Target = r.GetContext
+	r.Target = r.RunMethod("getPackageManager")
+	r2.Target = r.RunMethod3("getPackageArchiveInfo", fullpath , "java.lang.String", 1, "java.lang.int")
+
 End Sub
 
 Sub SetDivider(lv As ListView, Color As Int, Height As Int)
@@ -552,7 +673,6 @@ Sub GetPermissions(Package As String) As String()
 	Dim r As Reflector
 	r.Target = r.GetContext
 	r.Target = r.RunMethod("getPackageManager")
-	'get PacakgeInfo
 	r.Target = r.RunMethod4("getPackageInfo", Array As Object(Package, 0x00001000), _
       Array As String("java.lang.String", "java.lang.int"))
 	Dim permissions() As String
@@ -606,7 +726,6 @@ Sub GetParentPath(path As String) As String
 	End If
 	L = path.LastIndexOf("/")
 	If L = path.Length - 1 Then
-		'Strip the last slash
 		Path1 = path.SubString2(0,L)
 	Else
 		Path1 = path
@@ -645,6 +764,14 @@ Sub get_respath(package As String) As Object
 End Sub
 
 
-Sub toolbar_NavigationItemClick
-	
-End Sub
+#If Java
+
+public boolean _onCreateOptionsMenu(android.view.Menu menu) {
+    if (processBA.subExists("activity_createmenu")) {
+        processBA.raiseEvent2(null, true, "activity_createmenu", false, new de.amberhome.objects.appcompat.ACMenuWrapper(menu));
+        return true;
+    }
+    else
+        return false;
+}
+#End If

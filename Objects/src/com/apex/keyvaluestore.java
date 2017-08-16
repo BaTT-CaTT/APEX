@@ -30,6 +30,7 @@ public String _tempfile = "";
 public com.apex.main _main = null;
 public com.apex.sett _sett = null;
 public com.apex.starter _starter = null;
+public com.apex.animator _animator = null;
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 2;BA.debugLine="Sub Class_Globals";
  //BA.debugLineNum = 3;BA.debugLine="Private sql1 As SQL";
