@@ -1,5 +1,5 @@
 ﻿Type=Class
-Version=6.8
+Version=7.01
 ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@

@@ -75,9 +75,5 @@
     <dimen name="circular_progress_border">4dp</dimen>
     <dimen name="md_listitem_vertical_margin">12dp</dimen>
     <dimen name="md_listitem_vertical_margin_choice">8dp</dimen>
-	
-	<dimen name="fab_size_normal">56dp</dimen>
-    <dimen name="fab_size_mini">40dp</dimen>
-    <dimen name="labels_text_size">14sp</dimen>
 
 </resources>

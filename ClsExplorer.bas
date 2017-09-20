@@ -1,5 +1,5 @@
 ﻿Type=Class
-Version=6.8
+Version=7.01
 ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
@@ -48,6 +48,7 @@ Sub Class_Globals
 	Private bIgnoreEvent As Boolean
 	Private bUserMovingPnl As Boolean
 	Private bWaitForScroll As Boolean
+	Private mcl As MaterialColors
 End Sub
 
 'Initializes the file explorer
@@ -77,12 +78,12 @@ Public Sub Initialize(Activity As Activity, DefaultFolder As String, Filter As S
 	strBtnOKTxt = OkText
 	FastScrollEnabled = False
 	Ellipsis = True
-	BorderColor = Colors.RGB(25, 90, 179)
-	BackgroundColor = Colors.RGB(19, 27, 67)
+	BorderColor = Colors.ARGB(120,255,255,255)
+	BackgroundColor = mcl.md_green_700
 	FolderTextColor = Colors.White
 	FileTextColor1 = Colors.RGB(116, 172, 232)
 	FileTextColor2 = Colors.Gray
-	DividerColor = Colors.DarkGray
+	DividerColor = Colors.ARGB(50,255,255,255)
 	DialogRect.Initialize(Ecart, Ecart, 100%x - Ecart, 100%y - Ecart)
 	WaitUntilOK = True
 End Sub
@@ -368,19 +369,21 @@ Public Sub Explorer2(DarkTheme As Boolean)
 		FolderTextColor = Colors.White
 		FileTextColor1 = Colors.ARGB(220, 255, 255, 255)
 		FileTextColor2 = Colors.ARGB(128, 255, 255, 255)
-		DividerColor = Colors.DarkGray
+		DividerColor = mcl.md_grey_300
+		
 	Else
 		FolderTextColor = Colors.Black
 		FileTextColor1 = Colors.ARGB(200, 0, 0, 0)
 		FileTextColor2 = Colors.ARGB(128, 0, 0, 0)
-		DividerColor = Colors.LightGray
+		DividerColor = Colors.ARGB(100,255,255,255)
 	End If
 
 	pnlCartouche.Initialize("")
-	pnlCartouche.Color = Colors.Transparent
+	pnlCartouche.Color = mcl.md_grey_900
 	edtFilename.Initialize("")
 	edtFilename.TextSize = 16
 	edtFilename.InputType = Bit.Or(edtFilename.InputType, 0x80000)
+	edtFilename.Typeface=Typeface.LoadFromAssets("OpenSans.ttf")
 	edtFilename.SingleLine = True
 	edtFilename.Wrap = False
 	r.Target = edtFilename
@@ -483,7 +486,7 @@ End Sub
 Private Sub IsImage(NomFichier As String) As Boolean
 	Dim Minus As String
 	Minus = NomFichier.ToLowerCase
-	Return (Minus.EndsWith(".bmp") OR Minus.EndsWith(".gif") OR Minus.EndsWith(".jpg") OR Minus.EndsWith(".png"))
+	Return (Minus.EndsWith(".bmp") Or Minus.EndsWith(".gif") Or Minus.EndsWith(".jpg") Or Minus.EndsWith(".png"))
 End Sub
 
 ' Resize a picture
@@ -515,7 +518,7 @@ Private Sub AfficherImage(Image As String)
 	Try
 		Dim bmp As Bitmap
 		bmp.InitializeSample(strChemin, Image, pnlVisu.Width, pnlVisu.Height)
-		If bmp.Height <= pnlVisu.Height AND bmp.Width <= pnlVisu.Width Then
+		If bmp.Height <= pnlVisu.Height And bmp.Width <= pnlVisu.Width Then
 			' The picture is smaller than the ImgView -> we just center it
 			ivVisu.Gravity = Gravity.CENTER
 		Else
@@ -554,8 +557,8 @@ End Sub
 Private Sub IsText(NomFichier As String) As Boolean
 	Dim Minus As String
 	Minus = NomFichier.ToLowerCase
-	Return (Minus.EndsWith(".css") OR Minus.EndsWith(".htm") OR Minus.EndsWith(".html") _
-		  OR Minus.EndsWith(".txt") OR Minus.EndsWith(".xml"))
+	Return (Minus.EndsWith(".css") Or Minus.EndsWith(".htm") Or Minus.EndsWith(".html") _
+		  Or Minus.EndsWith(".txt") Or Minus.EndsWith(".xml"))
 End Sub
 
 ' Display the selected text file

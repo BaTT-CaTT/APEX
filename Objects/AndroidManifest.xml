@@ -1,37 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.apex"
-	android:versionCode="17"
-	android:versionName="1.6"
+	package="com.apkbackup.de"
+	android:versionCode="44"
+	android:versionName="1.9.7"
 	android:installLocation="internalOnly">
 	
-	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="26"/>
+	<uses-sdk android:minSdkVersion="13" android:targetSdkVersion="26"/>
 	<supports-screens android:largeScreens="true" 
 	    android:normalScreens="true" 
 	    android:smallScreens="true" 
 	    android:anyDensity="true"/>
 	<uses-permission 
-	android:name="android.launcher.permission.INSTALL_SHORTCUT"/>
+	 	android:name="android.launcher.permission.INSTALL_SHORTCUT"/>
 	<uses-permission 
-	 android:name="android.permission.GET_PACKAGE_SIZE"/>
+	 	android:name="android.permission.GET_PACKAGE_SIZE"/>
 	<uses-permission
-	  android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	  	android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission
-	  android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	  	android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 	<uses-permission
-	  android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+	  	android:name="android.permission.WRITE_SECURE_SETTINGS"/>
 	<uses-permission
-	 android:name="android.permission.PACKAGE_USAGE_STATS"/>
+	 	android:name="android.permission.PACKAGE_USAGE_STATS"/>
 	<uses-permission
-	  android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
-	 <uses-permission
-	  android:name="android.permission.BROADCAST_PACKAGE_REMOVED"/>
+	  	android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+	<uses-permission
+	  	android:name="android.permission.BROADCAST_PACKAGE_REMOVED"/> 
+	<uses-permission 
+	 	android:name="android.permission.VIBRATE"/>
+	<uses-permission 
+	 	android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
 	<application
 		android:icon="@drawable/icon"
 		android:label="APK Backup(Pro)"
 		android:theme="@style/MyAppTheme">
+		
+		<activity android:name="anywheresoftware.b4a.objects.preferenceactivity"/>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
@@ -47,13 +55,17 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".sett"
+			android:name=".swit"
 			android:label="APK Backup(Pro)"
 			android:screenOrientation="portrait">
 		</activity>
 		<service android:name=".starter">
 		</service>
 		<receiver android:name=".starter$starter_BR">
+		</receiver>
+		<service android:name=".fileobserve">
+		</service>
+		<receiver android:name=".fileobserve$fileobserve_BR">
 		</receiver>
 	</application>
 </manifest>

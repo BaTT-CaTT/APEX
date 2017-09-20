@@ -1,10 +1,9 @@
 ﻿Type=Class
-Version=6.8
+Version=7.01
 ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
-' Class module
-' CheckList v2.22-SV2D
+'############cls
 Sub Class_Globals
 	' Public
 	Public BackgroundColor As Int
@@ -40,7 +39,7 @@ Sub Class_Globals
 	Private PAINT_CHECKED As Int: PAINT_CHECKED = 2
 	Private PAINT_PRESSED As Int: PAINT_PRESSED = 4
 	' Types
-	Type typSortData(Index As Int, Value As Object)
+		Type typSortData1(Index As Int, Value As Object)
 End Sub
 
 ' Initializes the ScrollView.
@@ -62,7 +61,7 @@ Public Sub Initialize(Module As Object, svList As ScrollView2D, subCheck As Stri
 	ModeCheck = (sub_Click = "")
 	BlockCheckEvent = False
 	DividerSize = DividerHeight
-	DividerColor = Colors.ARGB(150, 200, 200, 200)
+	DividerColor = Colors.ARGB(128, 200, 200, 200)
 	BackgroundColor = Colors.Transparent
 	CheckedColor = Colors.Transparent
 	ExtensionColor = Colors.Transparent
@@ -164,7 +163,7 @@ Public Sub AddItem(ID As Object, Checked As Boolean, Text1 As String, Text2 As S
 	lbl1.Text = Text1
 	lbl1.TextColor = Colors.White
 	lbl1.TextSize = 18
-	lbl1.Typeface = Typeface.DEFAULT_BOLD
+	lbl1.Typeface = Typeface.LoadFromAssets("OpenSans.ttf")
 	If Text2 = "" Then
 		pnl.AddView(lbl1, PosX, 0, LargeurLabel, PanelHeight)
 	Else
@@ -210,7 +209,7 @@ Public Sub AddItemNoChkbx(ID As Object, Text1 As String, Text2 As String, Image 
 	Dim lbl1 As Label: lbl1.Initialize("")
 	lbl1.Gravity = Gravity.CENTER_VERTICAL
 	lbl1.Text = Text1
-	lbl1.TextColor = Colors.ARGB(150,255,255,255)
+	lbl1.TextColor = Colors.White
 	lbl1.TextSize = 18
 	lbl1.Typeface = Typeface.DEFAULT_BOLD
 	If Text2 = "" Then
@@ -242,14 +241,14 @@ Public Sub AddHeader(Text As String)
 	Dim pnlH As Panel: pnlH.Initialize("")
 	Dim lblB As Label: lblB.Initialize("")
 	Dim cdH As ColorDrawable
-	cdH.Initialize(Colors.ARGB(100, 30, 30, 30), 10)
+	cdH.Initialize(Colors.Transparent, 0)
 	lblB.Background = cdH
 	lblB.Text = "   " & Text
-	lblB.TextColor = Colors.Black
-	lblB.TextSize = 18
-	lblB.Typeface = Typeface.DEFAULT_BOLD
-	lblB.Gravity = Gravity.CENTER_VERTICAL
-	pnlH.AddView(lblB, 0, 0, getWidth, PanelHeight)
+	lblB.TextColor = Colors.White
+	lblB.TextSize = 20
+	lblB.Typeface = Typeface.LoadFromAssets("OpenSans.ttf")
+	lblB.Gravity = Gravity.CENTER_HORIZONTAL
+	pnlH.AddView(lblB, 0, 0, 100%x, 30dip)
 	AddToSV(pnlH, PanelHeight, False)
 	PaintBackground(pnlH, False)
 End Sub
@@ -477,7 +476,7 @@ Private Sub MakeValuesListWith(ViewIndexInPanel As Int, FirstPosition As Int, La
 	If sv.IsInitialized Then
 		If LastPosition > NumberOfItems - 1 Then
 			Log("LastPosition is beyond the last item")
-			Return Liste
+			Return
 		End If
 		Dim pnl As Panel, v As View
 		Dim l As Label, e As EditText
@@ -583,7 +582,7 @@ Public Sub SortItems(ValuesToSort As List, FirstPosition As Int, LastPosition As
 		SortList.Add(SortData)
 	Next
 	SortList.SortType("Value", AscendingOrder)
-
+	
 	' On recherche le premier et le dernier index non ordonné
 	' Ce faisant, on stocke les références des panneaux dans le bon ordre
 	Dim FirstToSort, LastToSort As Int
@@ -606,7 +605,7 @@ Public Sub SortItems(ValuesToSort As List, FirstPosition As Int, LastPosition As
 	For i = LastPosition + 1 To NumberOfItems - 1
 		PanelList.Add(sv.Panel.GetView(i))
 	Next
-
+	
 	' On ordonne les tops des panneaux
 	If HasExtraContent Then CollapseItem
 	Dim TotalHeight As Int
@@ -639,7 +638,7 @@ End Sub
 
 ' Gets the ScrollView width
 ' In some containers, the width property returns -1, so this function uses a different method to get it
-Public Sub getWidth As Int
+Public Sub getWidth
 	If sv.Width < 0 Then
 		Dim r As Reflector, Largeur As Int
 		r.Target = sv
@@ -648,7 +647,7 @@ Public Sub getWidth As Int
 			DoEvents
 			Largeur = r.RunMethod("getWidth")
 		End If
-		Return Largeur		
+		Return Largeur
 	Else
 		Return sv.Width
 	End If
@@ -656,7 +655,7 @@ End Sub
 
 ' Gets the ScrollView height
 ' In some containers, the height property returns -1, so this function uses a different method to get it
-Public Sub getHeight As Int
+Public Sub getHeight
 	If sv.Height < 0 Then
 		Dim r As Reflector, Hauteur As Int
 		r.Target = sv
@@ -665,14 +664,14 @@ Public Sub getHeight As Int
 			DoEvents
 			Hauteur = r.RunMethod("getHeight")
 		End If
-		Return Hauteur		
+		Return Hauteur
 	Else
 		Return sv.Height
 	End If
 End Sub
 
 ' Returns the number of items
-Public Sub NumberOfItems As Int
+Public Sub NumberOfItems
 	If sv.IsInitialized Then
 		Return sv.Panel.NumberOfViews
 	Else
@@ -720,8 +719,6 @@ End Sub
 Public Sub FindPanelContaining(MyView As View) As Panel
 	If sv.IsInitialized Then
 		Return GetParentPanel(MyView)
-	Else
-		Return Null
 	End If
 End Sub
 
@@ -798,8 +795,6 @@ Public Sub JumpToView(MyView As View) As Panel
 		pnl = GetParentPanel(MyView)
 		CommonJump(pnl.Top)
 		Return pnl
-	Else
-		Return Null
 	End If
 End Sub
 #End Region
@@ -811,7 +806,7 @@ End Sub
 
 Private Sub MakeCheckedList(ListType As Int) As List
 	Dim ListeCoches As List
-	ListeCoches.Initialize 
+	ListeCoches.Initialize
 	If sv.IsInitialized Then
 		For i = 0 To sv.Panel.NumberOfViews-1
 			Dim pnl As Panel
@@ -867,7 +862,7 @@ End Sub
 'Applies the new colors (BackgroundColor, CheckedColor, DividerColor, ExtensionColor) to the given item
 Public Sub Repaint(pnlItem As Panel)
 	Dim Extended As Boolean
-	Extended = HasExtraContent AND ExtendedItemID = pnlItem.Tag
+	Extended = HasExtraContent And ExtendedItemID = pnlItem.Tag
 	PaintBackground(pnlItem, Extended)
 	If DividerSize > 0 Then
 		Dim pnlDivider As Panel
@@ -989,7 +984,7 @@ End Sub
 
 ' Removes the extra content
 Public Sub CollapseItem
-	If ExtensionIndex <> -1 Then 
+	If ExtensionIndex <> -1 Then
 		Dim ExtensionHeight As Int
 		ExtensionHeight = ExtensionView.Height
 		ExtensionView.RemoveView
@@ -1090,7 +1085,7 @@ Private Sub MoveToDropPosition(Y As Int)
 			StartPosition = i
 			If EndPosition <> -1 Then Exit
 		End If
-		If DragAndDrop.Top >= pnl.Top AND DragAndDrop.Top < pnl.Top + pnl.Height Then
+		If DragAndDrop.Top >= pnl.Top And DragAndDrop.Top < pnl.Top + pnl.Height Then
 			EndPosition = i
 			If StartPosition <> -1 Then Exit
 		End If
@@ -1143,7 +1138,7 @@ Private Sub pnlSV_Touch(ViewTag As Object, Action As Int, X As Float, Y As Float
 		If DragAndDrop.IsInitialized Then MoveDDPanel(Y)
 	End If
 	LastY = Y
-	Return (sub_Click = "" AND sub_LongClick = "")
+	Return (sub_Click = "" And sub_LongClick = "")
 End Sub
 
 Private Sub pnlSV_Click(ViewTag As Object) As Boolean
@@ -1164,7 +1159,7 @@ Private Sub chbSV_CheckedChange(Checked As Boolean)
 	Dim chb As CheckBox, pnl As Panel
 	chb = Sender
 	pnl = FindPanelContaining(chb)
-	PaintBackground(pnl, HasExtraContent AND ExtendedItemID = pnl.Tag)
+	PaintBackground(pnl, HasExtraContent And ExtendedItemID = pnl.Tag)
 	If BlockCheckEvent Then Return
 	If sub_Check <> "" Then
 		If SubExists(CallbackMod, sub_Check) Then CallSub3(CallbackMod, sub_Check, chb, pnl.Tag)

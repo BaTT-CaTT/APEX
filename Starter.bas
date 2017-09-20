@@ -1,5 +1,5 @@
 ﻿Type=Service
-Version=6.8
+Version=7.01
 ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
@@ -11,7 +11,7 @@ B4A=true
 Sub Process_Globals
 	'These global variables will be declared once when the application starts.
 	'These variables can be accessed from all modules.
-
+		
 End Sub
 
 Sub Service_Create

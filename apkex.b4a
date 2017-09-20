@@ -1,113 +1,156 @@
-﻿Version=6.8
-NumberOfModules=6
-Module1=sett
-Module2=Starter
-Module3=KeyValueStore
-Module4=ClsCheckList
-Module5=ClsExplorer
-Module6=Animator
-Build1=Extractor,com.apex,Full
+﻿Version=7.01
+NumberOfModules=10
+Module1=swit
+Module2=Animator
+Module3=ClsCheckList
+Module4=ClsExplorer
+Module5=ClsPaklist
+Module6=KeyValueStore
+Module7=SaveModule
+Module8=Starter
+Module9=fileobserve
+Module10=ClsSlidingSidebar
+Build1=Extractor,com.apkbackup.de,Full
 Build2=Build_A,com.apex
 Build3=Build_B,com.aextract.de,Full
-ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~<uses-permission ~\n~android:name="android.launcher.permission.INSTALL_SHORTCUT"/>~\n~<uses-permission ~\n~ android:name="android.permission.GET_PACKAGE_SIZE"/>~\n~<uses-permission~\n~  android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>~\n~<uses-permission~\n~  android:name="android.permission.READ_EXTERNAL_STORAGE"/>~\n~<uses-permission~\n~  android:name="android.permission.WRITE_SECURE_SETTINGS"/>~\n~<uses-permission~\n~ android:name="android.permission.PACKAGE_USAGE_STATS"/>~\n~<uses-permission~\n~  android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>~\n~ <uses-permission~\n~  android:name="android.permission.BROADCAST_PACKAGE_REMOVED"/> ~\n~  )~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~SetApplicationAttribute(android:theme, "@style/MyAppTheme")~\n~'SetApplicationAttribute(android:theme, "@style/Theme.AppCompat")~\n~~\n~CreateResource(values, theme.xml,~\n~<resources>~\n~    <style name="MyAppTheme" parent="Theme.AppCompat">~\n~        <item name="colorPrimary">#37474F</item>~\n~        <item name="colorPrimaryDark">#37474F</item>~\n~        <item name="colorAccent">#76FF03</item>~\n~        <item name="windowNoTitle">true</item>~\n~        <item name="windowActionBar">false</item>~\n~		<item name="windowActionModeOverlay">true</item>~\n~    </style>~\n~</resources>~\n~)~\n~'End of default text.~\n~
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="13" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~<uses-permission ~\n~ 	android:name="android.launcher.permission.INSTALL_SHORTCUT"/>~\n~<uses-permission ~\n~ 	android:name="android.permission.GET_PACKAGE_SIZE"/>~\n~<uses-permission~\n~  	android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>~\n~<uses-permission~\n~  	android:name="android.permission.READ_EXTERNAL_STORAGE"/>~\n~<uses-permission~\n~  	android:name="android.permission.WRITE_SECURE_SETTINGS"/>~\n~<uses-permission~\n~ 	android:name="android.permission.PACKAGE_USAGE_STATS"/>~\n~<uses-permission~\n~  	android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>~\n~<uses-permission~\n~  	android:name="android.permission.BROADCAST_PACKAGE_REMOVED"/> ~\n~<uses-permission ~\n~ 	android:name="android.permission.VIBRATE"/>~\n~<uses-permission ~\n~ 	android:name="android.permission.INTERNET"/>~\n~  )~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~SetApplicationAttribute(android:theme, "@style/MyAppTheme")~\n~'SetApplicationAttribute(android:theme, "@style/Theme.AppCompat")~\n~AddApplicationText(<activity android:name="anywheresoftware.b4a.objects.preferenceactivity"/>)~\n~CreateResource(values, theme.xml,~\n~<resources>~\n~    <style name="MyAppTheme" parent="Theme.AppCompat">~\n~        <item name="colorPrimary">#1976D2</item>~\n~        <item name="colorPrimaryDark">#1976D2</item>~\n~        <item name="colorAccent">#424242</item>~\n~        <item name="windowNoTitle">true</item>~\n~        <item name="windowActionBar">false</item>~\n~		<item name="windowActionModeOverlay">true</item>~\n~    </style>~\n~</resources>~\n~)~\n~'End of default text.~\n~
 IconFile=
-NumberOfFiles=19
+NumberOfFiles=46
 File1=2.bal
-File2=add-3.png
-File3=archive-3.png
-File4=blueprint.png
-File5=bookmark.png
-File6=checked-1.png
-File7=error.png
-File8=folder-4.png
-File9=info.png
-File10=menu-1.png
-File11=Minus Red Button.png
-File12=minus.png
-File13=save.png
-File14=sett.bal
-File15=settings.png
-File16=stopwatch-3.png
-File17=street-1.png
-File18=Tag.png
-File19=warning.png
-NumberOfLibraries=24
+File2=3.bal
+File3=ac_launcher.png
+File4=black_shade.jpg
+File5=ic_android_white_18dp.png
+File6=ic_apps_white_36dp.png
+File7=ic_archive_white_36dp.png
+File8=ic_assignment_black_36dp.png
+File9=ic_assignment_turned_in_black_18dp.png
+File10=ic_assignment_turned_in_black_24dp.png
+File11=ic_assignment_turned_in_white_36dp.png
+File12=ic_block_white_36dp.png
+File13=ic_cached_white_36dp.png
+File14=ic_check_box_black_36dp.png
+File15=ic_check_box_outline_blank_black_36dp.png
+File16=ic_clear_white_36dp.png
+File17=ic_close_white_36dp.png
+File18=ic_description_white_18dp.png
+File19=ic_done_all_black_36dp.png
+File20=ic_exit_to_app_white_48dp.png
+File21=ic_find_in_page_black_36dp.png
+File22=ic_find_in_page_white_36dp.png
+File23=ic_flag_black_36dp.png
+File24=ic_folder_open_white_36dp.png
+File25=ic_get_app_black_24dp.png
+File26=ic_help_white_36dp.png
+File27=ic_highlight_remove_white_36dp.png
+File28=ic_info_black_36dp.png
+File29=ic_info_outline_black_36dp.png
+File30=ic_info_outline_white_36dp.png
+File31=ic_label_white_36dp.png
+File32=ic_now_widgets_black_18dp.png
+File33=ic_radio_button_on_white_36dp.png
+File34=ic_sd_storage_black_36dp.png
+File35=ic_sd_storage_white_48dp.png
+File36=ic_settings_applications_white_36dp.png
+File37=ic_share_white_36dp.png
+File38=ic_storage_white_18dp.png
+File39=ic_view_day_white_36dp.png
+File40=left.bal
+File41=main_1.png
+File42=OpenSans.ttf
+File43=page1.bal
+File44=page3.bal
+File45=reswit.bal
+File46=right.bal
+NumberOfLibraries=42
 Library1=core
 Library2=appcompat
 Library3=materialcolors
 Library4=customtoast
-Library5=materialdialogs
+Library5=scrollview2d
 Library6=dialogs
 Library7=phone
 Library8=reflection
 Library9=javaobject
 Library10=randomaccessfile
 Library11=loadingviews
-Library12=scrollview2d
+Library12=rspopupmenu
 Library13=animation
 Library14=betterdialogs
 Library15=b4xencryption
 Library16=sql
 Library17=intent id
-Library18=fileselect
+Library18=materialdialogs
 Library19=bcmaterial
 Library20=mlfiles
 Library21=bodygl
-Library22=xmllayoutbuilder
-Library23=ss_slidingmenustandard
-Library24=materialdialogsv7
+Library22=nineoldandroids
+Library23=kenburnsview
+Library24=stringutils
+Library25=designsupport
+Library26=numberprogressbar
+Library27=ahpreferenceactivity
+Library28=customnotification
+Library29=spdialogs
+Library30=ahswipetorefresh
+Library31=tabstripviewpager
+Library32=gestures
+Library33=guislidingsidebar
+Library34=gesturedetector
+Library35=preferenceactivity
+Library36=msos
+Library37=osstats
+Library38=androidresources
+Library39=administrator
+Library40=oslibrary
+Library41=slidingmenuwrapper
+Library42=storage
 @EndOfDesignText@
-'APEX Source Code by D.Trojan(trOw)
+'APK Backup(Pro) v 1.9.4 Source Code by D.Trojan (trOw)
 #Region  Project Attributes 
 	#ApplicationLabel: APK Backup(Pro)
-	#VersionCode: 17
-	#VersionName: 1.6
+	#VersionCode: 44
+	#VersionName: 1.9.7
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait 
 	#CanInstallToExternalStorage: False
 #End Region
-#AdditionalRes:C:\Users\trow\Documents\Apps\Worground\APK-Extractor\res
+#AdditionalRes:C:\Users\trow\Documents\Apps\Worground\APK-Extractor\res2
+#AdditionalRes:C:\Users\trow\Documents\Apps\Worground\APK-Extractor\Resources
+#AdditionalRes:C:\Users\trow\Documents\Apps\Worground\APK-Extractor\resRv
+#AdditionalRes:C:\Users\trow\Documents\Apps\Worground\APK-Extractor\ress,com.jeremyfeinstein.slidingmenu.lib
 #Extends: android.support.v7.app.ActionBarActivity
 #Extends: de.amberhome.materialdialogs.MaterialDialogsActivity
-
+#AdditionalJar: com.android.support:support-v4
 #Region  Activity Attributes 
 	#FullScreen: False
 	#IncludeTitle: True
 #End Region
 
 Sub Process_Globals
-	'These global variables will be declared once when the application starts.
-	'These variables can be accessed from all modules.
-	Private pak As PackageManager
-	Dim tim As Timer
 	
+	Private pak As PackageManager
+	Dim time,date As String 
+	Dim dex As Timer
+	Dim ex As Timer 
+	Dim exa As Timer 
 End Sub
 
 Sub Globals
-	'These global variables will be redeclared each time the activity is created.
-	'These variables can only be accessed from this module.
-	Private applist,extra,extra2,finish As List 
-	Private toolbar As ACToolBarDark
+	Dim dir As String 
+	Private applist,extra,extra2,finish,datal As List 
+	Dim cbut As CheckBox
 	Dim ABHelper As ACActionBar
 	Dim AC As AppCompat
-	Private ListView1 As ListView
 	Dim args(1) As Object
+	Dim tcount As Int
 	Dim Obj1, Obj2, Obj3,obj4,obj5,obj6 As Reflector
 	Dim size,flags,csize,sdk,itime As Int
-	Private name,l,Types(1),packName,idt,apath As String
+	Private name1,l,Types(1),packName,idt,apath As String
 	Private icon,icon2 As BitmapDrawable
 	Private mcl As MaterialColors
-	Private Label1 As Label
-	Private lvt As LVLineWithText
-	Private lvt2 As LVLineWithText
 	Private iv1,iv2 As ImageView
-	Private Label2 As Label
-	Private Label3 As Label
 	Private Label5 As Label
-	Private Label7 As Label
-	Dim count As Int
-	Private md As  MaterialDialogBuilder
-	Private Label6 As Label
 	Private Bname As Label
 	Dim bdia As BetterDialogs
 	Dim dias As CustomDialog2
@@ -115,300 +158,969 @@ Sub Globals
 	Private Bpath As Label
 	Private Bcontent As Label
 	Dim ie As INTENTID
-	Dim dlgFileExpl As ClsExplorer
-	Dim dir As String = File.DirRootExternal&"/APEX"
-	Private datas As KeyValueStore
-	Private apannel,bpannel,listpan As Panel
-	Dim b1 As Button
-	Private appanel,Bdialog As CustomDialog
-	Private Aapanel,Bbpanel As Panel
-	Private bclp As bcLinearProgressView
-	Private Ccontent As Label
-	Private Cname As Label
-	Private Cpanel As Panel
-	Private Cpath As Label
-	Private bc1 As bcButton
-	Private fab1 As ACMenu
-	Dim xml As XmlLayoutBuilder
-	Private lvg As LVPlayBall
+	Private datas,dtime,bcount,cop As KeyValueStore
+'	Dim b1 As Button
+	Private Bbpanel As Panel
+	Private dataliste As ListView
+	Dim bdia2 As CustomDialog2
+	Dim dia3 As MaterialDialogsManager
+	Dim svList As ScrollView
+	Dim lst As ClsPaklist
+	Private pdia As MaterialDialog
+	Dim pn As List
+	Dim sd As MLfiles
+	Dim ff As ClsExplorer
+	Dim mb As ACFlatButton
+	Private asr As AHSwipeToRefresh
+	Dim ref As Button
+	Dim Pid As List
+	Private toolbar As ACToolBarLight
+	Dim superfont As Typeface
+	Dim deldia As MaterialDialog
+	Dim chk As ACFlatButton
+	Dim lvMenu As ListView
+	Dim lblInfo As Label
+	Dim menulist As List  
+	Dim lvMenu As ListView
+	Private sm As SlidingMenu
+	Private rvmenu As ListView
+	Private rftext As Label
+	Dim rightlv As ListView
+	Private fbox As Spinner
+	Private otb As ACToolBarLight
+	Private Panel1 As Panel
+	Private btb As ACToolBarLight
+	Private acp As ACSpinner
+	Dim df As MaterialDialog
+	Private acs As bcCheckBox
+	Dim exalist As List 
+	Dim storage As env
+	Dim paths As Map 
+	Private astream As AsyncStreams
+
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("2")
-	toolbar.SetAsActionBar
-'	'toolbar.Menu.Add(0, 0, "Dummy", Null)
-	toolbar.InitMenuListener
-	toolbar.PopupTheme=toolbar.THEME_DARK
-	toolbar.Title=pak.GetApplicationLabel("com.aextract.de")
-	toolbar.SubTitle="Version "&pak.GetVersionName("com.aextract.de")
+	dir= File.DirRootExternal&"/APEX/backups"
+	superfont=Typeface.LoadFromAssets("OpenSans.ttf")
+	Dim fim,him,eim As Bitmap
+	Dim climg As BitmapDrawable
+	fim.Initialize(File.DirAssets,"ic_clear_white_36dp.png")
+	climg.Initialize(LoadBitmap(File.DirAssets,"ic_archive_white_36dp.png"))
+	eim.Initialize(File.DirAssets,"ic_label_white_36dp.png")
+	him.Initialize(File.DirAssets,"ic_info_outline_white_36dp.png")
+	Activity.Color=mcl.md_white_1000
+	time=DateTime.Time(DateTime.Now)
+	DateTime.TimeFormat="HH:mm"
+	DateTime.DateFormat="dd/MM/yyyy"
+	date=DateTime.Date(DateTime.Now)
+	sm.Initialize("sm")
+	datas.Initialize(File.DirInternal,"datastore_1")
+	dtime.Initialize(File.DirInternal,"datastore_2")
+	bcount.Initialize(File.DirInternal,"datastore_3")
+	cop.Initialize(File.DirInternal,"datastore_cop")
+	dia3.Initialize("dia3")
+	iv1.Initialize("iv1")
+	iv2.Initialize("iv2")
+	exalist.Initialize
+	iv1.Gravity=Gravity.FILL
+	iv2.Gravity=Gravity.FILL
+	datal.Initialize
+	Dim offset As Int = 22%x
+	sm.BehindOffset = offset
+	'sm2.BehindOffset = offset
+	sm.Mode = sm.BOTH
+	'sm2.Mode=sm.RIGHT
+	Dim lftMenu As Panel
+	Dim rhtMenu As Panel
+	lftMenu.Initialize("")
+	rhtMenu.Initialize("")
+	sm.Menu.AddView(lftMenu, 0, 0, 100%x-offset, 100%y)
+	sm.SecondaryMenu.AddView(rhtMenu, 0, 0,100%x-offset, 100%y)
+	lftMenu.LoadLayout("Left")
+	rhtMenu.LoadLayout("right")
+	Pid.Initialize
+	ref.Initialize("ref")
 	ABHelper.Initialize
-	ABHelper.ShowUpIndicator = False
+	toolbar.SetAsActionBar
 	toolbar.InitMenuListener
+	toolbar.PopupTheme=toolbar.THEME_LIGHT
+	'toolbar.Title=pak.GetApplicationLabel("com.apkbackup.de")
+	toolbar.SubTitle="V"&pak.GetVersionName("com.apkbackup.de")
+	ABHelper.ShowUpIndicator = True
 	ABHelper.HomeVisible=True
+	Dim lvm1,lvm2,lvm3,lvm4 As Label
+	lvm1.Initialize("")
+	lvm2.Initialize("")
+	lvm3.Initialize("")
+	lvm4.Initialize("")
+	lvm1=lvMenu.TwoLinesAndBitmap.Label
+	lvm2=lvMenu.TwoLinesAndBitmap.SecondLabel
+	lvm3=rvmenu.TwoLinesAndBitmap.Label
+	lvm4=rvmenu.TwoLinesAndBitmap.SecondLabel
+	lvm1.TextColor = Colors.White
+	lvm3.TextColor = Colors.White
+	lvm1.textsize=15
+	lvm3.textsize=15
+	lvm2.textsize=12
+	lvm4.textsize=12
+	lvm2.textcolor=Colors.ARGB(200,255,255,255)
+	lvm4.textcolor=Colors.ARGB(200,255,255,255)
+	lvMenu.color=Colors.ARGB(255,25,118,210)
+	lvMenu.TwoLinesAndBitmap.ImageView.Height=38dip
+	lvMenu.TwoLinesAndBitmap.ImageView.Width=38dip
+	lvMenu.TwoLinesAndBitmap.ImageView.Gravity=Gravity.CENTER
+	lvMenu.TwoLinesAndBitmap.ItemHeight=12%y
+	lvMenu.TwoLinesAndBitmap.SecondLabel.Height=12%y
+	lvMenu.TwoLinesAndBitmap.SecondLabel.Width=90%x
+	lvm1.Typeface=superfont
+	lvm2.Typeface=superfont
+	lvm3.Typeface=superfont
+	lvm4.Typeface=superfont
+	rvmenu.color=Colors.ARGB(255,25,118,210)
+	rvmenu.TwoLinesAndBitmap.ImageView.Height=38dip
+	rvmenu.TwoLinesAndBitmap.ImageView.Width=38dip
+	rvmenu.TwoLinesAndBitmap.ImageView.Gravity=Gravity.CENTER_VERTICAL
+	rvmenu.TwoLinesAndBitmap.ItemHeight=12%y
+	rvmenu.TwoLinesAndBitmap.SecondLabel.Height=12%y
+	rvmenu.TwoLinesAndBitmap.SecondLabel.Width=90%x
+	rightlv.Initialize("rightlv")
+
+	
+	'################################### MENU INITIALIZE #####################################
+	menulist.Initialize
+	mb.Initialize("mb")
+	mb.Text="Close"
+	
+	menulist.Add("About")
+	lst.Initialize(Me, svList, "", "lst_Click", "", 1dip)
+	lst.ExtensionColor = Colors.ARGB(25,162,185,219) 'mcl.md_blue_100
+	lst.SetOnPaintListener("spl")
+	lst.DividerColor=Colors.ARGB(30,0,0,0)
+	
+	chk.Initialize("Chk")
+	chk.TextSize=13
+	chk.Color=mcl.md_light_blue_400
+	chk.TextColor=mcl.md_white_1000
+	chk.Typeface=superfont
+	chk.Text="close"
+	chk.Gravity=Gravity.FILL	
+	'##########################################################################################
 	extra.Initialize
 	extra2.Initialize
 	finish.Initialize
-	md.Initialize("md")
 	ie.Initialize
-	Aapanel.Initialize("Aapanel")
 	Bbpanel.Initialize("Bbpanel")
-	b1.Initialize("b1")
 	Bname.Initialize("bname")
 	Bpath.Initialize("Bpath")
 	Bcontent.Initialize("bcontent")
-	datas.Initialize(File.DirDefaultExternal,"datastore_1")
-	If FirstTime Then 
-		File.MakeDir(File.DirRootExternal,"APEX/id")
-		datas.PutSimple("0",dir) 
-		
-	End If
-	'Dim xml As XmlLayoutBuilder
-	Dim bd,bd1,bd2 As BitmapDrawable
-	bd1.Initialize(LoadBitmap(File.DirAssets,"menu-1.png"))
-	'Activity.AddMenuItem3("Menu", "Menu", bd1.Bitmap, True)
-	bd.Initialize(LoadBitmap(File.DirAssets,"info.png"))
-	Activity.AddMenuItem3("Info", "inf", bd.Bitmap,True)
-'	Activity.AddMenuItem("Settings","sett")
-	bd2.Initialize(LoadBitmap(File.DirAssets,"Minus Red Button.png"))
-'	Activity.AddMenuItem("Exit", "close")
-	'############################################################# List Methods #####################
-	Dim l1,l2 As Label 
-	l1=ListView1.TwoLinesAndBitmap.Label
-	l2=ListView1.TwoLinesAndBitmap.SecondLabel
-	l1.TextSize=19
-	l1.TextColor=mcl.md_amber_A400
-	l2.TextSize=14
-	l2.TextColor=mcl.md_white_1000
-	ListView1.TwoLinesAndBitmap.ItemHeight=65dip
-	ListView1.TwoLinesAndBitmap.ImageView.Height=50dip
-	ListView1.Color=Colors.Transparent
-	SetDivider(ListView1, Colors.ARGB(255,255,255,255), 1dip)
-	'########################################################### Button & label Methods #######################
-
-	Activity.Color=Colors.ARGB(255,55,71,79)
-	'########################################################## Extractor Init and Methods #############
-	'############### Pannel Methods#####################################################################
-	'set the atrributes to the single Panel e.g size and colors
-	iv1.Initialize("iv1")
-	iv2.Initialize("iv2")
-	iv1.Gravity=Gravity.FILL
-	iv2.Gravity=Gravity.FILL
-	Label1.Initialize("label1")
-	Label2.Initialize("label2")
-	Label5.Initialize("label5")
-	Label3.Initialize("label3")
 	Label4.Initialize("label4")
-	Label6.Initialize("label6")
-	Label7.Initialize("label7")
-	lvt.Initialize("lvt")
-	
-	Label1.TextSize=16
-	Label2.TextSize=16
-	Label5.TextSize=16
-	Label3.TextSize=16
-	Label7.TextSize=14
-	Label1.TextColor=mcl.md_amber_A400
-	Label2.TextColor=mcl.md_amber_A400
-	Label5.TextColor=mcl.md_amber_A400
-	Label3.TextColor=mcl.md_amber_A400
-	Label7.TextColor=mcl.md_amber_A400
-	
-	
-	'Aapanel.AddView(iv1,8%x,30dip,80dip,80dip)
-	Aapanel.AddView(Label1,15dip,10dip,90%x,20dip)
-	Aapanel.AddView(Label2,15dip,30dip,90%x,20dip)
-	Aapanel.AddView(Label5,15dip,50dip,90%x,20dip)
-	Aapanel.AddView(Label3,15dip,70dip,80%x,20dip)
-	Aapanel.AddView(Label7,15dip,90dip,80%x,75dip)
-	appanel.AddView(Aapanel,0dip,0dip,100%x,30%y)
+	Label5.Initialize("label5")
+	dataliste.Initialize("dataliste")
+	dataliste.Enabled=True
+	'############################################################# List Methods #####################
+	Dim l3,l4 As Label 
+	l3.Initialize("")
+	l4.Initialize("")
+	l3=dataliste.TwoLinesAndBitmap.Label
+	l4=dataliste.TwoLinesAndBitmap.SecondLabel
+	l3.TextSize=15
+	l3.TextColor=mcl.md_white_1000
+	l4.TextSize=14
+	l4.TextColor=mcl.md_light_blue_400
+	dataliste.TwoLinesAndBitmap.ImageView.Height=38dip
+	dataliste.TwoLinesAndBitmap.ImageView.Width=38dip
+	dataliste.TwoLinesAndBitmap.ItemHeight=25%y
 	'#########################B Panel methods###########################################################
+	ex.Initialize("ex",1000)
+	exa.Initialize("exa",1000)
+	dex.Initialize("dex",1000)
+	dex.Enabled=False 
+	exa.Enabled=False 
+	ex.Interval=40
+	dex.Interval=40
+	exa.Interval=1
+	tcount=0
+	ex.Enabled=False
+	pn.Initialize
 	
-	Bbpanel.AddView(Label4,5dip,0dip,260dip,40dip)
-	Bbpanel.AddView(lvt,10dip,40dip,99%x,40dip)
-	Bbpanel.AddView(Label6,5dip,80dip,99%x,40dip)
-'	Bbpanel.AddView(ab3,80dip,120dip,100dip,40dip)
-
-	'#################################################################Pannel EXTRA Methods##############
-	'Bcontent.Text="Export the APK to:"
-	Ccontent.TextColor=Colors.ARGB(190,255,255,255)
-	Ccontent.Gravity=Gravity.FILL
-	Ccontent.TextSize=18
-	Ccontent.Enabled=True
-	bc1.Text="Cancel"
-	bc1.Color=mcl.md_blue_grey_800
-	Cpanel.Color=mcl.md_grey_900
-	Cpanel.Visible=False
-	'###############Floating Action Buttzon#############################################################
-	Dim fb,ib,ia As BitmapDrawable
-
-	ia.Initialize(LoadBitmap(File.DirAssets,"settings.png"))
-	ib.Initialize(LoadBitmap(File.DirAssets,"folder-4.png"))
-	fb.Initialize(LoadBitmap(File.DirAssets,"add-3.png"))
-	'###################################################################################################
-	tim.Initialize("tim",1000)
-'	bcp.Autostart=False
-'	bcp.stop
-	count=0
+	If FirstTime Then 
+		File.MakeDir(File.DirRootExternal,"/APEX/backups")
+	If Not (datas.ContainsKey("0")) Then
+			datas.PutSimple("0",dir)
+		End If
+	End If
+	paths = storage.Initialize
+	For i = 0 To paths.Size-1
+		Log(paths.GetKeyAt(i)&"="&paths.GetValueAt(i))
+	
+		
+	Next
+	
+	Dim de As String = File.DirRootExternal
+	Log ("DirRootExternal = "&de)
+	Dim mtc As Matcher = Regex.Matcher("(/|\\)[^(/|\\)]*(/|\\)",de)
+	Dim extsdcard As String = de
+	If mtc.Find = True Then
+		Dim mnt As String = mtc.Group(0)
+		
+		Log ("mount point = "& mnt)
+		Dim dirs As List = File.ListFiles(mnt)
+		For Each f As String In dirs
+			If storage.isExternalStorageRemovable(mnt&f) Then
+				Log ("Device = "& f&":"&mnt&f&" is removable")
+				If File.ListFiles(mnt&f).IsInitialized Then
+					Log("probably ExtSDCard: "&mnt&f)
+					extsdcard = mnt&f
+					datas.DeleteAll
+					datas.PutSimple("0",mnt&f&"/APEX/backups")
+				Else
+					'Msgbox("Problem reading "&mnt&f,"SD Card error:")
+				End If
+			Else
+				Log ("Device = "& f&":"&mnt&f&" is NOT removable")
+			End If
+		Next
+	End If
+	Log("extsdcard="&extsdcard)
+	
+	
+	file_check
 	apps_start
+	
 End Sub
 
 Sub Activity_Resume
-
+	file_check
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
-	tim.Enabled=False
-	Activity.Finish
-End Sub
-Sub Activity_BackKeyPressed As Boolean
-	bdia.CloseDialog(DialogResponse.CANCEL)
-	If dlgFileExpl.IsInitialized Then
-		If dlgFileExpl.IsActive Then Return True
-	End If
-	Return bdia
-End Sub
- 
-Sub Activity_CreateMenu(Menu As ACMenu)
-	Menu.Clear
-	Dim fb,ib,ia As BitmapDrawable
-	ia.Initialize(LoadBitmap(File.DirAssets,"settings.png"))
-	ib.Initialize(LoadBitmap(File.DirAssets,"folder-4.png"))
-	fb.Initialize(LoadBitmap(File.DirAssets,"error.png"))
-	Dim item As ACMenuItem
-	Menu.Add2(0, 0, "Settings", ia).ShowAsAction = item.SHOW_AS_ACTION_ALWAYS
-	Menu.Add2(1, 1, "Exit", Null).ShowAsAction = item.SHOW_AS_ACTION_ALWAYS
+	
+		exa.Enabled = False
+		ex.Enabled=False
 
 End Sub
- 
+Sub Activity_KeyPress(KeyCode As Int)As Boolean
+	If KeyCode = KeyCodes.KEYCODE_BACK Then
+				close_click
+		
+	End If
+	Return True
+End Sub
+
+Sub Activity_CreateMenu(menu As ACMenu)
+	Dim eim As BitmapDrawable
+	eim.Initialize(LoadBitmap(File.DirAssets,"ic_exit_to_app_white_48dp.png"))
+	Dim fim1,climg1 As BitmapDrawable 
+	fim1.Initialize(LoadBitmap(File.DirAssets,"ic_settings_applications_white_36dp.png"))
+	climg1.Initialize(LoadBitmap(File.DirAssets,"ic_apps_white_36dp.png"))
+	menu.Clear
+	Dim item,item2,item3 As ACMenuItem 
+	item3=toolbar.Menu.Add2(0, 0, "Menu", climg1)
+	item=toolbar.Menu.Add2(1, 1, "SMenu", fim1)
+	item2=toolbar.Menu.Add2(2, 2, "Exit", eim)
+	item.ShowAsAction = item.SHOW_AS_ACTION_ALWAYS
+	item2.ShowAsAction = item2.SHOW_AS_ACTION_ALWAYS
+	item3.ShowAsAction = item3.SHOW_AS_ACTION_ALWAYS
+	 menu_two
+End Sub
+Sub menu_two
+	lvMenu.Clear
+	lvMenu.AddTwoLinesAndBitmap2("Explorer","explore your backup folder",LoadBitmap(File.DirAssets,"ic_folder_open_white_36dp.png"),"0")
+	lvMenu.AddTwoLinesAndBitmap2("Backup All","export all user apps at once",LoadBitmap(File.DirAssets,"ic_cached_white_36dp.png"),"1")
+	lvMenu.AddTwoLinesAndBitmap2("Clear All","deletes all backup files",LoadBitmap(File.DirAssets,"ic_block_white_36dp.png"),"2")
+	lvMenu.AddTwoLinesAndBitmap2("Settings Panel","open the Main-settings",LoadBitmap(File.DirAssets,"ic_exit_to_app_white_48dp.png"),"3")
+	menu_three
+End Sub
+
+Sub menu_three
+	Dim font As Typeface=Typeface.LoadFromAssets("OpenSans.ttf")
+	rftext.Typeface=font
+	rftext.Text="FileWatcher Service coming up next Version.."
+	rftext.TextSize=12
+	Dim fim,him,eim As Bitmap
+	Dim climg As BitmapDrawable
+	fim.Initialize(File.DirAssets,"ic_label_white_36dp.png")
+	climg.Initialize(LoadBitmap(File.DirAssets,"ic_folder_open_white_36dp.png"))
+	eim.Initialize(File.DirAssets,"ic_share_white_36dp.png")
+	him.Initialize(File.DirAssets,"ic_info_outline_white_36dp.png")
+	rvmenu.Clear
+	rvmenu.AddTwoLinesAndBitmap2("Share","share"&pak.GetApplicationLabel("com.apkbackup.de"),eim,"0")
+	rvmenu.AddTwoLinesAndBitmap2("Help","FAQ and recent Info´s",fim,"1")
+	rvmenu.AddTwoLinesAndBitmap2("About","APK Backup(Pro) version etc..",him,"2")
+	dir=File.dirrootexternal&"/APEX/backups"
+	If datas.ContainsKey("0") Then 
+		acp.Add2(datas.GetSimple("0"),climg)
+	Else 
+		datas.PutSimple("0",dir)
+		acp.Add2(dir,climg)
+	End If 
+End Sub
+
+Sub rvmenu_ItemClick (Position As Int, Value As Object)
+	Select Position
+		Case 0
+			app_share
+			'log("toastmessage")
+		Case 1
+			ToastMessageShow("Sorry coming on next Update ;(",False)
+			sm.HideMenus
+			'log("developer Info")
+		Case 2 
+			CallSub(Me,dev_info)
+			sm.HideMenus
+	End Select
+				
+End Sub
+Sub lvmenu_ItemClick (Position As Int, Value As Object)
+	Select Value
+		Case  "0"
+			sm.HideMenus
+			item_show
+		
+		Case  "1"
+			sm.HideMenus
+			pre_start
+		Case  "2"
+			sm.HideMenus
+			del_dia
+		Case  "3"
+			sm.HideMenus
+			sm.ShowSecondaryMenu
+	End Select
+End Sub
+Sub toolbar_NavigationItemClick
+	If sm.Visible=True Then 
+		sm.HideMenus
+		Else 
+			sm.ShowMenu
+	End If
+End Sub
+Sub otb_NavigationItemClick
+	sm.HideMenus
+End Sub
+Sub btb_NavigationItemClick
+	sm.HideMenus
+End Sub
+
 Sub toolbar_MenuItemClick (Item As ACMenuItem)
-	If Item.Id=0 Then
-		StartActivity(sett)
+	Select Item.Id
+		Case "0"
+			sm.ShowMenu
+		Case "1"
+			sm.ShowSecondaryMenu
+		Case "2"
+			close_click
+		Case "3"
+		
+	End Select
+End Sub
+Sub acp_ItemClick (Position As Int, Value As Object)
+	Select Position
+		Case 0 
+			sm.HideMenus
+			path_explorer
+		Case 1
+			sm.HideMenus
+			ToastMessageShow("Select case 1",False)
+	End Select
+End Sub
+Sub acs_onCheckedChanged(tag As Object, checked As Boolean)
+	Select checked
+		Case checked=True 
+			ToastMessageShow("Service Options coming on next Update",False)
+		Case checked=False
+			ToastMessageShow("coming soon...",False)
+	End Select
+	
+End Sub
+
+Sub pre_start
+	Dim imi As MaterialSimpleListItem
+	Dim ico As BitmapDrawable
+	ico.Initialize(LoadBitmap(File.DirAssets,"ic_now_widgets_black_18dp.png"))
+	Dim dlab,dcont As Label
+
+	dlab.Initialize("")
+	dcont.Initialize("")
+	dlab.TextSize=15
+	dcont.TextSize=14
+	dir=datas.GetSimple("0")
+	dlab.Text="Backup"
+
+	icon.Gravity=Gravity.FILL
+	Dim Builder As MaterialDialogBuilder
+	exalist.Clear
+	Builder.Initialize("exadia")
+	For i=0 To extra.Size-1
+		exalist.Add(extra.Get(i))
+		size= File.Size(GetParentPath(GetSourceDir(GetActivitiesInfo(extra.Get(i)))),GetFileName(GetSourceDir(GetActivitiesInfo(extra.Get(i)))))
+		icon=pak.GetApplicationIcon(extra.Get(i))
+		packName=extra.Get(i)
+		imi.Initialize(icon,pak.GetApplicationLabel(extra.Get(i))&" - "&FormatFileSize(size))
+		Builder.AddSimpleItem(imi)
+		dcont.Text="Backup all unsaved App´s at once..("&FormatFileSize(size*1024*10)&")"
+	Next
+	Builder.Title(dlab.text).TitleColor(mcl.md_black_1000).Icon(ico).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(dcont.Text).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(False).AutoDismiss(True).PositiveText("Start").PositiveColor(mcl.md_amber_700).NeutralText("Cancel").NeutralColor(mcl.md_black_1000)
+	
+	
+	
+	
+	
+	deldia=Builder.Show
+	deldia.Show
+	'ToastMessageShow("sorry module is coming soon..",False)
+End Sub
+Sub exadia_ButtonPressed (Dialog As MaterialDialog, Action As String)
+	Select Action
+		Case Dialog.ACTION_POSITIVE
+			ex_start
+		Case Dialog.ACTION_NEGATIVE
+			ToastMessageShow("canceled", False)
+		Case Dialog.ACTION_NEUTRAL
+			ToastMessageShow("canceled...",False)
+	End Select
+End Sub
+Sub ex_start
+	Dim Builder As MaterialDialogBuilder
+	Dim maxs As Int 
+	dir=datas.GetSimple("0")
+	maxs=exalist.Size
+	For i =0 To exalist.Size-1
+		size=File.Size(GetParentPath(GetSourceDir(GetActivitiesInfo(exalist.Get(i)))),GetFileName(GetSourceDir(GetActivitiesInfo(exalist.Get(i)))))*1024*10
+	Next
+	Label4.Text="copying to"&dir&"("&FormatFileSize(size)&")... this will take a while please standby."
+	icon.Initialize(LoadBitmap(File.DirAssets,"ic_assignment_black_36dp.png"))
+	Builder.Initialize("exap")
+	Builder.Title("Backup All:").TitleColor(mcl.md_black_1000).TitleGravity(Builder.GRAVITY_START).Content(Label4.text).ContentColor(Colors.DarkGray).Icon(icon).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(False).AutoDismiss(True).Build
+	Builder.progress(False,maxs)
+
+	exa.Enabled=True
+	deldia=Builder.Show
+	deldia.Show
+	
+	
+End Sub
+
+Sub exa_Tick
+	If Not(deldia.IsShowing) Then
+		exa.Enabled = False
+		Return
 	End If
-	If Item.id=1 Then 
-		Dim res As Int 
-		res=Msgbox2("Exit APEX Backup ?","Exit?","Yes","","No",LoadBitmap(File.DirAssets,"Minus Red Button.png"))
-		If res=DialogResponse.POSITIVE Then 
-			ExitApplication
+	If deldia.CurrentProgress = deldia.MaxProgress Then
+		exa.Enabled = False
+		deldia.Content = "Done! Please wait.."
+		StartActivity(swit)
+		Activity.Finish
+		Animator.setanimati("slide_from_left","slide_to_left")
+	Else 
+		deldia.IncrementProgress(1)
+		file_copy
+	End If
+End Sub
+
+Sub file_copy
+
+	Dim a1,a2,sum,it As Int
+	Dim p,s,b,fname,vers As String
+	Dim buf() As Byte
+	Dim out As OutputStream
+	out.InitializeToBytesArray(0)
+	Dim inn As InputStream
+	For  h = 0 To  exalist.Size-1
+		dtime.PutSimple(exalist.Get(h),date&" - "&time)
+		s=exalist.Get(h)
+		fname=pak.GetApplicationLabel(s)
+		vers=pak.GetVersionName(s)
+		p=GetParentPath(GetSourceDir(GetActivitiesInfo(s)))
+		b=GetFileName(GetSourceDir(GetActivitiesInfo(s)))
+		dir=datas.GetSimple("0")
+		size= File.Size(GetParentPath(GetSourceDir(GetActivitiesInfo(exalist.Get(h)))),GetFileName(GetSourceDir(GetActivitiesInfo(exalist.Get(h)))))
+		If File.Exists(dir,fname&"_"&vers&".apk") Then
+			deldia.Content="file exist"&fname
+		Else	
+			dtime.DeleteAll
+			File.Copy(p,b,dir,fname&"_"&vers&".apk")
+			'Log(BytesToFile(p,fname&"_"&vers&".apk",buf))
+			deldia.Content="copying..."&fname&"_"&vers&".apk"
 		End If
-	End If
+	Next
 End Sub
-
-Sub rebound
-
+Sub fc_NewData (Buffer() As Byte)
+	
 End Sub
-
-Sub sett_click
-	StartActivity(sett)
-End Sub
-
-Sub inf_click
-	md_build
+Sub fc_NewStream (dir1 As String, FileName As String)
+'	For Each s As String In exalist
+'		dir=GetParentPath(GetSourceDir(GetActivitiesInfo(s)))
+'	Next
+	File.Copy(dir1,FileName,dir1,FileName&".apk")
+	FileName=FileName&".apk"
+	Log(FileName)
 End Sub
 
 Sub close_click
-	ExitApplication
+	icon.Initialize(LoadBitmap(File.DirAssets,"ic_info_black_36dp.png"))
+	Dim Builder As MaterialDialogBuilder
+	Builder.Initialize("cldia")
+	Builder.Title("Exit").TitleColor(mcl.md_black_1000).Icon(icon).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content("Close Apk Backup(Pro) now?").ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(False).AutoDismiss(True).PositiveText("Yes").PositiveColor(mcl.md_amber_900).NeutralText("No").NeutralColor(mcl.md_black_1000)
+	deldia=Builder.Show
+	deldia.Show
+End Sub
+Sub cldia_ButtonPressed (Dialog As MaterialDialog, Action As String)
+	Select Action
+		Case Dialog.ACTION_POSITIVE
+			ExitApplication
+		Case Dialog.ACTION_NEGATIVE
+			ToastMessageShow(Action, False)
+		Case Dialog.ACTION_NEUTRAL
+			ToastMessageShow("canceled...",False)
+	End Select
+	
 End Sub
 
-Sub bc1_Click
-	ListView1.Enabled=False
-	Cpanel.SetVisibleAnimated(290,False)
-End Sub
 
-Sub tim_Tick
-	count=count+1
-'	bcp.Progress=100/count*20
-'	
-'	If count>0 Then bcp.SecondaryProgress=20
-'	If count>1 Then bcp.SecondaryProgress=40
-'	If count>2 Then bcp.SecondaryProgress=60
-'	If count>3 Then bcp.SecondaryProgress=80
-'	If count>4 Then bcp.SecondaryProgress=90
-    If count = 5 Then
-'		bcp.SecondaryProgress=100
-		tim.Enabled=False
-		count=0
-		lvg.stopAnim
-'		bcp.stop
-		 ini_extract
+
+
+Sub path_explorer
+	svList.SetVisibleAnimated(400,False)
+	ff.Initialize(Activity,File.DirRootExternal,"*.*", True, True, "Select")
+	ff.Explorer2(False)
+	ff.FastScrollEnabled=True
+	Dim ffs As String
+	icon.Initialize(LoadBitmap(File.DirAssets,"ic_find_in_page_black_36dp.png"))
+	If  Not(ff.Selection.Canceled Or ff.Selection.ChosenPath="") Then
+		'log(ff.Selection.ChosenPath)
+		datas.DeleteAll
+		datas.PutSimple("0",ff.Selection.ChosenPath)
+		ToastMessageShow(ff.Selection.ChosenPath,False)
+		svList.SetVisibleAnimated(400,True)
+	Else
+		datas.DeleteAll
+		datas.PutSimple("0",dir)
+		svList.SetVisibleAnimated(400,True)
+		ToastMessageShow("closed",False)
 	End If
 End Sub
 
-Sub Listview1_ItemLongClick (Position As Int, Value As Object)
+Sub del_dia
+	Dim imi As MaterialSimpleListItem
+	Dim dlab,dcont As Label
+	dlab.Initialize("")
+	dcont.Initialize("")
+	dlab.TextSize=15
+	dcont.TextSize=14
+	Dim dlist As List 
+	dlist.Initialize
+	dir=datas.GetSimple("0")
+	'log(dir)
+	dlist=File.ListFiles(dir)
+	dlab.Text="Delete Backup Archive ?"
+	dcont.Text="Files to clear: "&dlist.size&" apk´s found"
+	icon.Initialize(LoadBitmap(File.DirAssets,"ic_sd_storage_black_36dp.png"))
+	icon.Gravity=Gravity.FILL
+	Dim Builder As MaterialDialogBuilder
+	Builder.Initialize("Dialog2")
+	Builder.Title(dlab.text).TitleColor(mcl.md_black_1000).Icon(icon).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(dcont.Text).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(False).AutoDismiss(True).PositiveText("Yes delete").PositiveColor(mcl.md_amber_900).NeutralText("Cancel").NeutralColor(mcl.md_black_1000)
+	For Each i As String In dlist
+		imi.Initialize2("ili",i)
+		Builder.AddSimpleItem(imi)
+	Next
+	deldia=Builder.Show
+	deldia.Show
+End Sub
+
+Sub delete_files
+	Dim Builder As MaterialDialogBuilder
+	Dim dlist As List
+	Dim maxs As Int 
+	dlist.Initialize
+	dir=datas.GetSimple("0")
+	'log(dir)
+	dlist=File.ListFiles(dir)
+	maxs=dlist.Size
+	'log(maxs)
+	icon.Initialize(LoadBitmap(File.DirAssets,"ic_assignment_black_36dp.png"))
+	Builder.Initialize("Dialog4")
+	Builder.Title("cleaning..").TitleColor(mcl.md_black_1000).TitleGravity(Builder.GRAVITY_START).Icon(icon).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content("Delete Apk´s from: "&datas.GetSimple("0")).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(False).AutoDismiss(True).Build
+	Builder.progress2(False,maxs,True)
+	df=Builder.Show
+	df.Show
+	dex.Enabled=True
+	For Each lf As String In dlist
+		Label4.Text=lf
+	Next
+	For i = 0 To dlist.Size-1
+		File.Delete(dir,dlist.Get(i))
+	Next
+	For Each s As String In dtime.ListKeys
+		dtime.Remove(s)
+		bcount.Remove(s)
+	Next 
+End Sub
+Sub dex_Tick
+	If Not(df.IsShowing) Then
+		dex.Enabled = False
+		Return
+	End If
+	If df.CurrentProgress = df.MaxProgress Then
+		dex.Enabled = False
+		df.Content = "Done! Please wait.."
+		StartActivity(swit)
+		df.Dismiss
+		Activity.Finish
+		Animator.setanimati("slide_from_left","slide_to_left")
+	Else
+		df.IncrementProgress(1)
+	End If
+End Sub
+Sub Dialog2_ButtonPressed (Dialog As MaterialDialog, Action As String)
+	Select Action
+		Case Dialog.ACTION_POSITIVE
+			'log"Positive Button pressed")
+			delete_files
+		Case Dialog.ACTION_NEGATIVE
+			'log"Negative Button pressed")
+			ToastMessageShow(Action, False)
+		Case Dialog.ACTION_NEUTRAL
+			'log"Neutral Button pressed")
+			ToastMessageShow("canceled...",False)
+	End Select
+	
+End Sub
+Sub dev_info
+	Dim l1,l2 As Label
+	Dim pnl As Panel
+	pnl.Initialize("pnl")
+	l1.Initialize("")
+	l2.Initialize("")
+	l2.TextSize=16
+	l1.TextSize=15
+	l1.textcolor=Colors.ARGB(200,255,255,255)
+	l2.textcolor=mcl.md_black_1000
+	l1.Gravity=Gravity.TOP
+	l1.Typeface=Typeface.LoadFromAssets("OpenSans.ttf")
+	l2.Typeface=Typeface.LoadFromAssets("OpenSans.ttf")
+	l2.Text="About "&pak.GetApplicationLabel("com.apkbackup.de")
+	l1.Text=pak.GetApplicationLabel("com.apkbackup.de")&", Version: "&pak.GetVersionName("com.apkbackup.de")&" | Build: "&pak.GetVersionCode("com.apkbackup.de")&". Code/Design by D. Trojan, www.battcatt.bplaced.net for Support/Infos. APK Backup(Pro) by APEX All rights reserved ©2017"
+	pnl.AddView(l1,25dip,1dip,88%x,98%y)
+	Dim infodia As MaterialDialog
+	Dim info As BitmapDrawable
+	info.Initialize(LoadBitmap(File.DirAssets,"ic_info_outline_black_36dp.png"))
+	Dim Builder As MaterialDialogBuilder
+	Builder.Initialize("Dialog3")
+	Builder.Title(l2.Text).TitleColor(mcl.md_black_1000).Icon(info).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(l1.Text).ContentLineSpacing(1dip).ContentColor(mcl.md_black_1000).Cancelable(True).NeutralText("close").NeutralColor(mcl.md_blue_600).Theme(Builder.THEME_LIGHT).ContentGravity(Builder.GRAVITY_START)
+	infodia=Builder.Show
+	infodia.Show
+	
+End Sub
+
+Sub social_init
+	ToastMessageShow("avaiable at next update..",False)
+End Sub
+
+Sub app_share
+	Dim i As Intent
+	i.Initialize(i.ACTION_SEND, "")
+	i.SetType("text/plain")
+	i.PutExtra("android.intent.extra.TEXT", "https://www.amazon.com/dp/B0754TM922/ref=sr_1_1?ie=UTF8&qid=1504040405&sr=8-1&keywords=APK+Backup%28Pro%29")
+	i.PutExtra("android.intent.extra.SUBJECT", "APK Backup (Pro) is a cost-free solution for app management on your Android smartphone. Get it on Amazone")
+	StartActivity(i)
+End Sub
+
+Sub menulist_ItemClick (Position As Int, Value As Object)
+	If Position=1 Then 
+		explor_set
+	End If
+End Sub
+
+Sub explor_set
+	svList.SetVisibleAnimated(400,False)
+	dir =datas.GetSimple("0")
+	ff.Initialize(Activity,dir,".apk", True, False, "Close")
+	ff.Explorer2(False)
+	ff.FastScrollEnabled=True
+	Dim ffs As String 
+	If Not (ff.Selection.Canceled Or ff.Selection.ChosenFile="") Then
+		ffs= ff.Selection.ChosenFile.SubString2(0,ff.Selection.ChosenFile.Length-4)
+			finish.Clear
+			finish.Add(ffs)
+			dataliste.Clear
+		dataliste.AddTwoLines2(ff.Selection.ChosenFile,ff.Selection.ChosenPath,"0")
+		dataliste.AddTwoLines2("Backup Folder:",datas.GetSimple("0"),"1")
+		dataliste.AddTwoLines2("Last Backup:",dtime.GetSimple(ffs),"2")
+			ex_pan
+	Else
+		svList.SetVisibleAnimated(400,True)
+		ToastMessageShow("closed",False)
+	End If
+End Sub
+
+Sub butt2_click
 	Dim lab As Label
 	lab.Initialize("lab")
-	Dim text As String = "Select one of the Options below for "&pak.GetApplicationLabel(Value)
-	lab.TextSize=15
+	Dim text As String = "Start "&pak.GetApplicationLabel(finish.Get(0)) &"?"
+	lab.TextSize=18
 	lab.Gravity=Gravity.CENTER_HORIZONTAL
-	lab.TextColor=mcl.md_white_1000
+	lab.TextColor=mcl.md_black_1000
 	lab.Text=text
-	Dim res As Int 
-	res =bdia.CustomDialog("Application Extras:",300dip,100dip,lab,300dip,150dip,3,Colors.Transparent,"Start","Close","Deinstall",False,"bdia")
-	If res=DialogResponse.POSITIVE Then 
-	Dim i As Intent
-	i.Initialize(extra.Get(Position),"")
-	i = pak.GetApplicationIntent(extra.Get(Position))
-	Try
-		StartActivity(i)
-	Catch
-			Log(LastException.Message)
-	End Try
-	Else
-		ToastMessageShow("canceled..",False)
-		
-	End If
-	If res=DialogResponse.NEGATIVE Then
-		Dim i As Intent
-		i.Initialize("android.intent.action.DELETE","package:"&extra.Get(Position))
-		Try
+	icon=pak.GetApplicationIcon(finish.Get(0))
+	Dim Builder As MaterialDialogBuilder
+	Builder.Initialize("b2dia")
+	Builder.Title(pak.GetApplicationLabel(finish.Get(0))).TitleColor(mcl.md_black_1000).Icon(icon).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(lab.text).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(False).AutoDismiss(True).PositiveText("Ok").PositiveColor(mcl.md_amber_900).NeutralText("Cancel").NeutralColor(mcl.md_black_1000)
+	deldia=Builder.Show
+	deldia.Show
+End Sub
+Sub b2dia_ButtonPressed (Dialog As MaterialDialog, Action As String)
+	Select Action
+		Case Dialog.ACTION_POSITIVE
+			'log"Positive Button pressed")
+			Dim i As Intent
+			i.Initialize(finish.Get(0),"")
+			i = pak.GetApplicationIntent(finish.Get(0))
 			StartActivity(i)
-		Catch
-			Log(LastException.Message)
-		End Try
+			Animator.setanimati("slide_from_left","slide_to_left")
+		Case Dialog.ACTION_NEGATIVE
+			'log"Negative Button pressed")
+			ToastMessageShow(Action, False)
+		Case Dialog.ACTION_NEUTRAL
+			'log"Neutral Button pressed")
+			ToastMessageShow("canceled...",False)
+	End Select
+	
+End Sub
+
+Sub butt3_click
+social_init
+End Sub
+
+Sub b3dia_ButtonPressed (Dialog As MaterialDialog, Action As String)
+	Select Action
+		Case Dialog.ACTION_POSITIVE
+			'log"Positive Button pressed")
+			social_init
+		Case Dialog.ACTION_NEGATIVE
+			'log"Negative Button pressed")
+			ToastMessageShow(Action, False)
+		Case Dialog.ACTION_NEUTRAL
+			'log"Neutral Button pressed")
+			ToastMessageShow("canceled...",False)
+	End Select
+	
+End Sub
+Sub chk_dtas
+	packName=finish.Get(0)
+	If dtime.ContainsKey(packName) Then
+		int_folder
+	
+		lst.CheckedColor=mcl.md_green_400
+		'log"file checked: "&packName&".apk")
 	Else
-		ToastMessageShow("deinstall failed!",False)
+		ab1_Click
 		
 	End If
 End Sub
 
 
 
-Sub ListView1_ItemClick (Position As Int, Value As Object) 
-	Dim filename As String 
-	For Each d As String In extra
-		packName=d
-		Log("packname: "&d)
-	If Value=packName Then
-		icon=pak.GetApplicationIcon(packName)
-		size=File.Size(GetParentPath(GetSourceDir(GetActivitiesInfo(packName))),GetFileName(GetSourceDir(GetActivitiesInfo(packName))))
-		apath=get_respath(packName)
-		name=pak.GetApplicationLabel(d)
-		filename=d
-		'Panel1.Visible=True	
-			Label1.Text="Package: "&filename
-			Label2.Text="Version: "&pak.GetVersionName(packName)
-			Label6.Text=apath
-			Label5.Text="Size: "&FormatFileSize(size)
-			Label3.Text="Android SDK: "&sdk
-			Label7.Text="Lib: "&idt
-			extra2.Clear
-			Log("-------clear-----")
-			extra2.Add(name)
-			extra2.Add(d)
-			Log("->add: "&d)	
-		ex_pan		
+Sub ab1_Click
+	Dim fname,version As String 
+	Dim cont As Label
+	cont.Initialize("")
+	Bname.Enabled=True
+	Bpath.Enabled=True
+	'lvt.Visible=False
+	Bname.TextColor=mcl.md_light_blue_400
+	Bpath.Gravity=Gravity.CENTER_HORIZONTAL
+	Bname.Text=pak.GetApplicationLabel(finish.Get(0))
+	fname=pak.GetApplicationLabel(finish.Get(0))
+	version=pak.GetVersionName(finish.Get(0))
+	Bpath.Text=datas.GetSimple("0")
+	cont.Text="Backup "&Bname.Text&" ?"
+	icon=pak.GetApplicationIcon(finish.Get(0))
+	Dim Builder As MaterialDialogBuilder
+	Builder.Initialize("stadia")
+	Builder.Title("Backup App:").TitleColor(mcl.md_black_1000).Icon(icon).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(cont.text).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(False).AutoDismiss(True).PositiveText("Start").PositiveColor(mcl.md_black_1000).NeutralText("Cancel").NeutralColor(Colors.LightGray).ItemsColor(mcl.md_blue_400).ItemsGravity(Builder.GRAVITY_START).MaxIconSize(64dip).ItemsCallbackSingleChoice(3).AlwaysCallSingleChoiceCallback
+	Builder.Items(Array As String (fname,"Ver. "&version,"Folder:"&Bpath.Text))
+	Builder.ItemsCallback
+	deldia=Builder.Show
+	deldia.Show
+End Sub
+Sub stadia_ItemSelected (Dialog As MaterialDialog, Position As Int, Text As String)
+	If Position=2 Then
+		path_explorer 
+		Else
+			prog_start
 	End If
-	Next
+End Sub
+Sub stadia_SingleChoiceItemSelected (Dialog As MaterialDialog, Position As Int, Text As String)
+	If Position=2 Then
+		path_explorer
+	End If
+End Sub
+Sub stadia_ButtonPressed (Dialog As MaterialDialog, Action As String)
+	Select Action
+		Case Dialog.ACTION_POSITIVE
+			prog_start
+		Case Dialog.ACTION_NEGATIVE
+			ToastMessageShow(Action, False)
+		Case Dialog.ACTION_NEUTRAL
+			ToastMessageShow(Action&"...",False)
+	End Select
+	
+End Sub
+Sub fold_set
+	explor_set
+
 End Sub
 
+Sub item_show
+	Dim ico As BitmapDrawable
+	Dim imi As MaterialSimpleListItem
+	Dim dlab,dcont As Label
+	dlab.Initialize("")
+	dcont.Initialize("")
+	dlab.TextSize=15
+	dcont.TextSize=14
+	Dim dlist As List
+	dlist.Initialize
+	dir=datas.GetSimple("0")
+	'log(dir)
+	dlist=File.ListFiles(dir)
+	dlab.Text="Backup Archive:"
+	dcont.Text=dlist.size&" apk´s"
+	ico.Initialize(LoadBitmap(File.DirAssets,"ic_sd_storage_black_36dp.png"))
+	icon.Initialize(LoadBitmap(File.DirAssets,"ic_assignment_turned_in_black_24dp.png"))
+	icon.Gravity=Gravity.CENTER
+	Dim Builder As MaterialDialogBuilder
+	Builder.Initialize("idia")
+	Builder.Title(dlab.text).TitleColor(mcl.md_black_1000).Icon(ico).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(dcont.Text).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(True).AutoDismiss(False).NeutralText("Ok").NeutralColor(mcl.md_black_1000).ItemsCallback.Build
+	Builder.ForceStacking(True)
+	For  i =0 To  dlist.Size-1
+		imi.Initialize(icon,dlist.Get(i))
+		Builder.AddSimpleItem(imi)
+		imi.Id=i
+	Next
+	Builder.ItemsCallbacksingleChoice(Builder.SimpleItemCount).LimitIconToDefaultSize
+	deldia=Builder.Show
+	deldia.Show
+End Sub
+Sub idia_SimpleItemSelected (Dialog As MaterialDialog, Position As Int, Item As MaterialSimpleListItem)
+		If Position=Item.id Then 
+			finish.Clear
+			finish.Add(Item.Content.SubString2(0,Item.Content.Length-4))
+		ToastMessageShow(Item.Content.SubString2(0,Item.Content.Length-4),False)
+		End If
+End Sub
 
+Sub cidia_ButtonPressed (Dialog As MaterialDialog, Action As String)
+	Select Action
+		Case Dialog.ACTION_POSITIVE
+			Dim s As String = finish.Get(0)
+			packName=s
+			name1=s&".apk"
+			Log("cidia: "&name1)
+			File.Delete(dir,name1)
+			If Not(File.Exists(dir,name1)) Then
+				Dialog.Dismiss
+			End If
+		Case Dialog.ACTION_NEGATIVE
+			ToastMessageShow("canceled", False)
+		Case Dialog.ACTION_NEUTRAL
+			ToastMessageShow("canceled...",False)
+	End Select
+End Sub
+Sub idia_ButtonPressed (Dialog As MaterialDialog, Action As String)
+	Select Action
+		Case Dialog.ACTION_POSITIVE
+			
+		Case Dialog.ACTION_NEGATIVE
+			'log"Negative Button pressed")
+		Case Dialog.ACTION_NEUTRAL
+			'log"Neutral Button pressed")
+			Dialog.Dismiss
+	End Select
+	
+End Sub
+
+Sub ex_pan
+	Dim fname,version As String 
+	Dim s As String = finish.Get(0)
+	fname=pak.GetApplicationLabel(s)
+	version=pak.GetVersionName(s)
+	Log("EXPAN: "&s)
+	name1=fname&"_"&version&".apk"
+	packName=s
+	Bpath.Text=datas.GetSimple("0")
+	For Each h As String In extra
+		If s=h Then 
+			Bname.Text=pak.GetApplicationLabel(h)
+			icon=pak.GetApplicationIcon(h)
+			Else 
+				Bname.Text=name1
+				icon.Initialize(LoadBitmap(File.DirAssets,"ic_assignment_black_36dp.png"))
+		End If
+	Next
+	Dim l1,l2,l3 As Label
+	l1.Initialize("")
+	l2.Initialize("")
+	l3.Initialize("")
+	l3.Text=Bpath.Text
+	l2.Text=dtime.GetSimple(s)
+	Dim total As String
+	total = "size: "&FormatFileSize(File.Size(Bpath.text,name1))
+	Dim Builder As MaterialDialogBuilder
+	Builder.Initialize("bckdia")
+	Builder.Title("Backup Info:").TitleColor(mcl.md_black_1000).Icon(icon).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(Bname.Text).ContentLineSpacing(1dip).ContentColor(mcl.md_black_1000).Cancelable(False).AutoDismiss(True).PositiveText("Ok").PositiveColor(mcl.md_amber_900).NeutralText("").NeutralColor(mcl.md_black_1000).ItemsColor(mcl.md_blue_600).ItemsGravity(Builder.GRAVITY_START).MaxIconSize(64).AlwaysCallSingleChoiceCallback.ForceStacking(True)
+			
+		
+		Builder.Items(Array As String (packName,total,l2.Text))
+	
+	
+	deldia=Builder.Show
+	deldia.Show
+	
+End Sub
+Sub bckdia_ItemLongSelected (Dialog As MaterialDialog, Position As Int, Text As String)
+	Dim s As String = finish.Get(0)
+	Log("2_EXPAN: "&s)
+	name1=s&".apk"
+	packName=s
+		Dim dlab,dcont As Label
+		dlab.Initialize("")
+		dcont.Initialize("")
+		dlab.TextSize=15
+		dcont.TextSize=14
+		Dim Builder As MaterialDialogBuilder
+		Builder.Initialize("cidia")
+		Builder.Title(dlab.text).TitleColor(mcl.md_black_1000).Icon(icon).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(dcont.Text).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(True).AutoDismiss(False).NeutralText("Ok").NeutralColor(mcl.md_black_1000).ItemsCallback.Build
+		Builder.ForceStacking(True)
+		deldia=Builder.Show
+		deldia.Show
+End Sub
+Sub bckdia_ButtonPressed (Dialog As MaterialDialog, Action As String)
+	Select Action
+		Case Dialog.ACTION_POSITIVE
+			'log"Positive Button pressed")
+			svList.SetVisibleAnimated(350,True)
+		Case Dialog.ACTION_NEGATIVE
+			'log"Negative Button pressed")
+			ToastMessageShow(Action, False)
+		Case Dialog.ACTION_NEUTRAL
+			'log"Neutral Button pressed")
+			svList.SetVisibleAnimated(350,True)
+			ToastMessageShow(Action,False)
+	End Select
+	
+End Sub
 Sub ini_extract
-	lvt.Visible=True
-	Dim s As String = extra2.Get(1)
-	Log("pak: "&s)
-	Dim b As String = extra2.Get(0)
-	Log("Name: "&b)
-	name=b
-	Label4.text=name
+	Dim s As String = finish.Get(0)
+	'log"pak: "&s)
+	Dim b As String = GetFileName(GetSourceDir(GetActivitiesInfo(finish.get(0))))
+	Dim p As String =  GetParentPath(get_respath(finish.Get(0)))
+	'log"Name: "&b)
+	name1=b
+	Label4.text=name1
 	Dim d1,d2,master As String 
 	d1=File.DirRootExternal&"/APEX"
 	d2=datas.GetSimple("0")
@@ -417,206 +1129,223 @@ Sub ini_extract
 	Else
 		master=d1
 	End If 
-		Log("copy value: "&master)
+		'log"copy value: "&master)
 	If File.Exists(master,s&".apk") Then
+		put_data
 		int_folder
 	Else
-		ProgressDialogShow("copy APK in progress..")
-		File.Copy(GetParentPath(GetSourceDir(GetActivitiesInfo(s))),GetFileName(GetSourceDir(GetActivitiesInfo(s))),master,s&".apk")
-		end_extract
+		
+		'logp)
+		cop.DeleteAll
+		cop.PutSimple("1",p)
+		cop.PutSimple("2",s)
+		cop.PutSimple("3",b)
+		put_data
+		ex_pan2
 	End If		
 End Sub
 
-Sub data_check
-	Dim fpath As String
-	If datas.ContainsKey("0") Then
-		fpath=datas.GetSimple("0")
-	Else
-
-	End If
-End Sub
-
-Sub end_extract
-	tim.Enabled=False
-	lvt.Visible=False
-	ProgressDialogHide
-		end_msg
-End Sub
-
 Sub end_msg
-	Dim lv1 As ListView
-	lv1.Initialize("lv1")
-	lv1.Enabled=True
-	lv1.Color=Colors.Transparent
-	Dim l1,l2 As Label 
-	l1.Initialize("l1")
-	l2.Initialize("l2")
-	l1=lv1.TwoLinesAndBitmap.Label
-	l2=lv1.TwoLinesAndBitmap.SecondLabel
-	l1.TextSize=14
-	l1.TextColor=Colors.White
-	l2.TextSize=12
-	l2.TextColor=mcl.md_light_blue_500
 	Dim dirs As String 
 	If datas.ContainsKey("0") Then
 		dirs=datas.GetSimple("0")
 	End If
-	Dim s As String = extra2.Get(1)
+	Dim s As String = finish.Get(0)
 	packName=s
-	Dim e As String=extra2.get(0)
-	name=e
+	Dim e As String=finish.get(0)
+	name1=pak.GetApplicationLabel(e)
 	icon=pak.GetApplicationIcon(s)
-	finish=File.ListFiles(dir)
-		For u = 0 To finish.Size-1
-			Log(finish.Get(u))
-		
-		Next
-	SetDivider(ListView1, Colors.White, 1dip)
-	Label4.Text=name 
-	Cpanel.SetVisibleAnimated(200,False)
-	Dim zu As Int 
-	lv1.AddTwoLinesAndBitmap(name&" exported to:",dirs,icon.Bitmap)
-	zu=bdia.CustomDialog("Export log:",100%x,100dip,lv1,250dip,150dip,20dip,Colors.Transparent,"","Ok","",False,"bdia")
-	If zu=DialogResponse.POSITIVE Then
-		
-		dlgFileExpl.Initialize(Activity, dirs, ".apk", True, False, "OK")
-		dlgFileExpl.FastScrollEnabled = True
-		dlgFileExpl.Explorer2(True)
-		If Not(dlgFileExpl.Selection.Canceled Or dlgFileExpl.Selection.ChosenFile = "") Then
-			ToastMessageShow(name,False)
-		End If
-	End If
+	Label4.Text=name1 
+	Dim total As String
+	total = FormatFileSize(File.Size(GetParentPath(GetSourceDir(GetActivitiesInfo(packName))),GetFileName(GetSourceDir(GetActivitiesInfo(packName)))))
+	Dim Builder As MaterialDialogBuilder
+	Builder.Initialize("endia")
+	Builder.Title("Complete..").TitleColor(mcl.md_black_1000).Icon(icon).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content("Backup Info:").ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(False).AutoDismiss(False).PositiveText("Next..").PositiveColor(mcl.md_amber_900).NeutralText("").NeutralColor(mcl.md_black_1000).ForceStacking(True)
+	Builder.Items(Array As String (packName&".apk",total,"SD:",dirs))
+	deldia=Builder.Show
+	deldia.Show
+	
 End Sub
-
-Sub int_folder
-	Dim error As String ="File allready exists!"
-	Dim errorb As Label
-	errorb.Initialize("errorb")
-	errorb.Text=error
-	errorb.Gravity=Gravity.CENTER
-	errorb.TextColor=mcl.md_white_1000
-	errorb.TextSize=18
-	Dim tu As Int 
-	bdia.CustomDialog("INFO:",200dip,150dip,errorb,220dip,100dip,1dip,Colors.Transparent,"OK","","",False,"bdia")
-	'ex_pan
-End Sub
-
-Sub md_build
-	md.Theme(md.THEME_DARK)
-	md.CanceledOnTouchOutside(True)
-	md.Cancelable(True)
-	md.ContentColor(mcl.md_white_1000)
-	md.content(pak.GetApplicationLabel("com.aextract.de")&", Version: "&pak.GetVersionName("com.aextract.de")&" | Build: "&pak.GetVersionCode("com.aextract.de")&"| Welcome to APK Extractor short APEX. It's easy and fast to use, simply tap an app and tap EXPORT. In the settings you can specify an individual path to save. By pressing and holding down an app in the list, this starts after a query Unless otherwise set APEX save your backups under 'sd / APEX /' the app does not need a root. Please note that you can not export system apps with APEX! All Rights Reserved APEX ©2017")
-	md.PositiveText("Ok")
-	md.ButtonStackedGravity(md.GRAVITY_Start)
-	md.ForceStacking(True)
-	md.ContentGravity(md.GRAVITY_START)
-	md.Title("About APEX:")
-	md.PositiveColor(mcl.md_white_1000)
-	md.show
-End Sub
-
-Sub md_ButtonPressed (Dialog As MaterialDialog , Action As String)
-
+Sub endia_ButtonPressed (Dialog As MaterialDialog, Action As String)
 	Select Action
 		Case Dialog.ACTION_POSITIVE
-			ToastMessageShow("Copyright 2017 BaTT-CaTT",False)
+'			
+'			Sleep(0)
+'			Animator.setanimati("slide_from_left","slide_to_left")
+'			
+			file_check
+			lst.ResizePanel
+			pdia.Dismiss
+			deldia.Dismiss
+			CallSubDelayed(swit,"rebound")
+			Activity.Finish
 		Case Dialog.ACTION_NEGATIVE
-			ToastMessageShow("Copyright 2017 BaTT-CaTT",False)
+			ToastMessageShow(Action, False)
 		Case Dialog.ACTION_NEUTRAL
-			ToastMessageShow("Copyright 2017 BaTT-CaTT",False)
+			ToastMessageShow(Action,False)
 	End Select
+	
 End Sub
 
 Sub file_check
-	Dim s As String = extra2.Get(1)
-	Log("pak: "&s)
-	name=pak.GetApplicationLabel(s)
+	Dim fname,version As String 
+	dir=datas.GetSimple("0")
+For Each g As String In extra
+	fname=pak.GetApplicationLabel(g)
+	version=pak.GetVersionName(g)
+	If File.Exists(dir,fname&"_"&version&".apk") Then
+			If Not (dtime.ContainsKey(g)) Then 
+				dtime.PutSimple(g,date&" - "&time)
+				Log(g&" added")
+				cbut.Checked=True
+			End If 
+	End If 
+		If Not(File.Exists(dir,fname&"_"&version&".apk")) Then
+			If dtime.ContainsKey(g) Then
+				dtime.Remove(g)
+				Log(g&" removed")
+				cbut.Checked=False
+			End If
+	End If 
+Next
+End Sub
+Sub put_data
+	Dim s As String = finish.Get(0)
+	packName=s
+	If bcount.ContainsKey(packName) Then 
+		dtime.Remove(packName)
+	dtime.PutSimple(packName,date&" - "&time)
+	bcount.Remove(packName)
+	bcount.PutSimple("0",packName)
+	Else
+	dtime.PutSimple(packName,date&" - "&time)
+		bcount.PutSimple("0",packName)
+	'log"Put: "&dtime.GetSimple(packName))
+		End If 	
+End Sub
+
+Sub int_folder
+	Dim pnl As Panel
+	pnl.Initialize("")
 	Dim d1,d2,master As String
 	d1=File.DirRootExternal&"/APEX"
 	d2=datas.GetSimple("0")
+	Dim sf As Label
+	sf.Initialize("")
+	For Each s As String In finish
+		sf=pnl.GetView(s)
+	Next
 	If datas.ContainsKey("0") Then
 		master=d2
 	End If
-	If File.Exists(master,s&".apk") Then
-		int_folder
-	Else
-		start
-	
-	End If  
-End Sub 
+	Dim error As String ="Backup found!"
+	Dim errorc As String =master
+	Dim errorb,errord As Label
+	errorb.Initialize("errorb")
+	errord.Initialize("errord")
+	errorb.Text=error
+	errord.Text=errorc
+	errorb.Gravity=Gravity.FILL
+	errorb.TextColor=mcl.md_black_1000
+	errorb.TextSize=17
+	icon=pak.GetApplicationIcon(s)
+	Dim Builder As MaterialDialogBuilder
+	Builder.Initialize("intdia")
+	Builder.Title("APK Info").TitleColor(mcl.md_black_1000).Icon(icon).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(errorb.Text&","&errord.Text&s&".apk").ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(True).AutoDismiss(True).PositiveText("Ok").PositiveColor(mcl.md_amber_900).NeutralText("").NeutralColor(mcl.md_black_1000)
+	deldia=Builder.Show
+	deldia.Show
+End Sub
 
-Sub ab1_Click
-	Bname.Enabled=True
-	Bpath.Enabled=True
-	lvt.Visible=False
-	Bpath.Gravity=Gravity.CENTER_HORIZONTAL
-	Bname.Text=extra2.Get(0)
-	Bpath.Text="to: "&datas.GetSimple("0")
-	Bcontent.Text=Label5.text&", "&extra2.Get(1)
-	Label6.text=Bpath.Text
-	Label4.Text=Bname.text
-	Label6.TextSize=16
-	Label4.TextSize=18
-	Label4.TextColor=mcl.md_amber_400
-	Label6.TextColor=mcl.md_light_blue_A400
-	Label4.Gravity=Gravity.CENTER_HORIZONTAL
-	'Label4.Gravity=Gravity.CENTER_HORIZONTAL
-	dias.AddView(Bbpanel,85%x,25%y)
-	dias.Show("Backup the app?","Yes","Cancel","Set Path...",icon.Bitmap)
-	If dias.Response = DialogResponse.POSITIVE Then
-		file_check
-	Else
-		If dias.Response=DialogResponse.NEGATIVE Then 
-			CallSubDelayed(sett,"call_start")
-		Else
-			ToastMessageShow("caceled...",False)
+
+Sub prog_start
+	Dim  version As String 
+	Dim s As String = finish.Get(0)
+	Dim ss As String
+	Dim sum As Int
+	sum=0
+	dir=datas.Getsimple("0")
+	name1=pak.GetApplicationLabel(s)
+	icon=pak.GetApplicationIcon(s)
+	
+	version=pak.GetVersionName(s)
+	If File.Exists(dir,name1&"_"&version&".apk") Then 
+	'log"Start export: "&s)
+		ss=s
+		dataliste.Clear
+		dataliste.AddTwoLinesAndBitmap(name1,FormatFileSize(size),icon.Bitmap)
+		dataliste.AddTwoLinesAndBitmap("Folder:",datas.GetSimple("0"),LoadBitmap(File.DirAssets,"ic_storage_white_18dp.png"))
+		dataliste.AddTwoLinesAndBitmap("Last:",dtime.GetSimple(ss),LoadBitmap(File.DirAssets,"ic_storage_white_18dp.png"))
+		ex_pan
+	Else 
+		ex_pan2
 		End If 
-	End If
-
 End Sub
-
-Sub start
-	If tim.Enabled=False Then
-		tim.Enabled=True
-		Ccontent.Text=Bname.Text
-		Cpanel.SetVisibleAnimated(150,True)
-		lvg.startAnim
-	
-'		bcp.start
-	Else
-		tim.Enabled=False
-		ti_start
-	End If
-End Sub
-
-Sub ti_start
-	tim.Enabled=True
-	tim_Tick
-End Sub
-
-Sub ex_pan
-	Dim s As String = extra2.Get(1)
-	Log("EXPAN: "&s)
-	name=pak.GetApplicationLabel(s)
-	Log(pak_info(s))
-	appanel.Show(name,"Backup APK","Exit","",icon.Bitmap)
-	If appanel.Response=DialogResponse.POSITIVE Then 
-		ab1_Click
-	End If
-End Sub 
-
 Sub ex_pan2
-	
-	Bdialog.AddView(Bbpanel,5dip,0,100%x,30%y)
-	Bdialog.Show("Exporting...","","","",LoadBitmap(File.DirAssets,"warning.png"))
-		'Panel2.Visible=False
+	Dim a1,version As String 
+	Dim sum As Int 
+	Dim extitel As Label
+	extitel.Initialize("") 
+	Dim s,p As String 
+	s=finish.Get("0")
+	p=GetParentPath(GetSourceDir(GetActivitiesInfo(s)))
+	packName=s
+	name1=pak.GetApplicationLabel(s)
+	version=pak.GetVersionName(s)
+	extitel.Text=name1
+	extitel.TextSize=11
+	icon=pak.GetApplicationIcon(s)
+	dir=datas.GetSimple("0")
+	size=File.Size(GetParentPath(GetSourceDir(GetActivitiesInfo(finish.Get("0")))),GetFileName(GetSourceDir(GetActivitiesInfo(finish.Get("0")))))
+	Label4.Text=packName&"->-> "&name1&"_"&version&".apk ("&FormatFileSize(size)&") to: "&dir 
+	Label4.TextColor=mcl.md_black_1000
+	Label4.TextSize=12
+	Label4.Gravity=Gravity.FILL
+	Label4.Typeface=superfont
+	Dim Builder As MaterialDialogBuilder
+	Builder.Initialize("Dialog")
+	Builder.Title(extitel.Text).TitleColor(mcl.md_blue_A400).Icon(icon).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(Label4.Text).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(False).AutoDismiss(True).Build
+	a1=File.Size(p,GetFileName(GetSourceDir(GetActivitiesInfo(s))))
+	sum=a1/1024/1024
+	Builder.progress2(False,sum,True)
+	pdia=Builder.Show
+	pdia.CurrentProgress=0
+	tcount=0
+	ex.Enabled=True
 End Sub
-
+Sub ex_Tick
+	Dim a1,a2,sum,it As Int
+	Dim p,s,b,fname,vers As String
+	s=finish.Get(0)
+	fname=pak.GetApplicationLabel(s)
+	vers=pak.GetVersionName(s)
+	p=GetParentPath(GetSourceDir(GetActivitiesInfo(s)))
+	b=GetFileName(GetSourceDir(GetActivitiesInfo(s)))
+	a1=File.Size(p,GetFileName(GetSourceDir(GetActivitiesInfo(s))))
+	sum=a1/1024/1024
+	'logsum)
+	If Not(pdia.IsShowing) Then
+		ex.Enabled = False
+		Return
+	End If
+	If pdia.CurrentProgress = pdia.MaxProgress-2 Then File.Copy(p,b,dir,fname&"_"&vers&".apk")
+	If pdia.CurrentProgress = pdia.MaxProgress Then
+		ex.Enabled = False
+		put_data
+		pdia.Content = "Done! Please wait.."
+			
+		'pdia.Dismiss
+		deldia.Dismiss
+		'CallSubDelayed(swit,"rebound")
+		StartActivity(swit)
+		Activity.Finish
+		'end_msg
+	Else
+	pdia.IncrementProgress(1)
+	End If
+	
+End Sub
 
 Sub apps_start
-	
-	ListView1.Clear
 	extra.Clear
 	applist=pak.GetInstalledPackages
 	Obj1.Target = Obj1.GetContext
@@ -638,16 +1367,219 @@ Sub apps_start
 			'app is not in the system image
 			args(0) = Obj3.Target
 			Types(0) = "android.content.pm.ApplicationInfo"
-			name = Obj1.RunMethod4("getApplicationLabel", args, Types)
+			name1 = Obj1.RunMethod4("getApplicationLabel", args, Types)
 			icon = Obj1.RunMethod4("getApplicationIcon", args, Types)
-			'itime= Obj1.RunMethod4("getfirstInstallTime",args,Types)
-			Dim total As String
-			total = File.Size(GetParentPath(GetSourceDir(GetActivitiesInfo(packName))),GetFileName(GetSourceDir(GetActivitiesInfo(packName))))
-			ListView1.AddTwoLinesAndBitmap2(name,GetParentPath(apath),icon.Bitmap,packName)
 			extra.Add(packName)
-			
-		End If
+		End If	
 	Next
+	create_lvs
+End Sub
+
+Sub create_lvs		
+	Dim total,bcksizie As String, ID As Object
+	pn.Clear
+	bcksizie=dtime.ListKeys.Size
+
+	lst.AddHeader("App(s): "&extra.size&", Backup(s): "&bcksizie)
+	'svList.Panel.Elevation=5dip
+	For i=0 To   extra.Size-1
+		ID=extra.Get(i)
+		name1=pak.GetApplicationLabel(extra.Get(i))
+		total =pak.GetVersionName(extra.Get(i))
+		'log"create item: "&name1)
+		lst.AddCustomItem(ID,CreateItem(name1&" "&total,i),60dip)
+	Next 
+	lst.ResizePanel
+End Sub
+Sub CreateItem(h As String  , i As Int) As Panel
+	Dim lbl,ver As Label 
+	Dim pnl As Panel
+	pnl.Initialize("")
+	Dim bg As BitmapDrawable
+	bg.Initialize(LoadBitmap(File.DirAssets,"ic_check_box_outline_blank_black_36dp.png"))
+	Dim bg1 As BitmapDrawable
+	bg1.Initialize(LoadBitmap(File.DirAssets,"ic_check_box_black_36dp.png"))
+	Dim iiv As ImageView
+	iiv.Initialize("")
+	Dim cfont As Typeface=Typeface.LoadFromAssets("OpenSans.ttf")
+	
+	cbut.Initialize("cbut")
+	cbut.Gravity=Gravity.FILL
+	cbut.Enabled=False
+	icon=pak.GetApplicationIcon(extra.Get(i))
+	icon.Gravity=Gravity.FILL
+	iiv.Bitmap=icon.Bitmap
+	Dim font As Typeface
+	font=Typeface.CreateNew(Typeface.LoadFromAssets("OpenSans.ttf"),Typeface.STYLE_ITALIC)
+	If dtime.ContainsKey(extra.Get(i)) Then
+		cbut.Checked=True
+		paint_pan(pnl,2)
+	Else
+		cbut.Checked=False
+		paint_pan(pnl,0)
+	End If
+	pnl.AddView(cbut, 0dip, 8dip, 42dip, 42dip)
+	lbl.Initialize("") 'View #1
+	lbl.Typeface=cfont
+	lbl.Text= h
+	lbl.TextColor = mcl.md_blue_700
+	lbl.TextSize = 18
+	lbl.Gravity = Gravity.CENTER_VERTICAL
+	ver.Initialize("")
+	ver.TextColor=Colors.DarkGray
+	ver.Typeface=font 
+	ver.TextSize=13
+	ver.Gravity = Gravity.LEFT
+	ver.Text=extra.Get(i)
+	iiv.Gravity=Gravity.FILL
+	pnl.AddView(lbl, 43dip, 0, lst.getWidth - 130dip, 25dip)
+	pnl.AddView(ver, 43dip, lbl.Height, lst.getWidth - 120dip, 25dip)
+	pnl.AddView(iiv,82%x,3dip,52dip,52dip)
+	
+	Return pnl
+End Sub
+Sub cbut_CheckedChange(Checked As Boolean)
+	Dim bg As BitmapDrawable
+	bg.Initialize(LoadBitmap(File.DirAssets,"ic_check_box_outline_blank_black_36dp.png"))
+	Dim bg1 As BitmapDrawable
+	bg1.Initialize(LoadBitmap(File.DirAssets,"ic_check_box_black_36dp.png"))
+	Select Checked
+	Case Checked=True  
+		cbut.Enabled=False
+	Case Checked=False 
+			cbut.Enabled=True 
+	End Select
+End Sub
+
+Sub paint_pan(pnl As Panel,State As Int) 
+	Select State
+		Case 0, 1	' Default, Extended
+			pnl.Color = Colors.ARGB(120,255,255,255)
+		Case 2, 3	' Checked, Extended+Checked
+			pnl.Color =Colors.ARGB(110,139,195,74)
+		Case 4		' Pressed
+			pnl.Color =Colors.ARGB(120,108,113,109)
+			
+	End Select
+	Return pnl
+End Sub
+
+Sub ExpandItem(pnl As Panel, ID As Object)
+	Dim pnlDetails As Panel, lbl,iiv,update As Label
+	Dim cfont As Typeface=Typeface.LoadFromAssets("OpenSans.ttf")
+	pnlDetails.Initialize("")
+	pnlDetails.Elevation=5dip
+	lbl.Initialize("")
+	lbl.TextColor = Colors.DarkGray
+	lbl.TextSize = 14
+	lbl.Typeface=cfont
+	iiv.Initialize("")
+	iiv.TextSize=14
+	iiv.Typeface=cfont
+	iiv.TextColor=Colors.DarkGray
+	update.Initialize("")
+	update.Typeface=cfont
+	update.TextColor=mcl.md_blue_600
+	update.TextSize=14
+	
+	Dim butt,butt2,butt3 As ACButton
+	butt.Initialize("butt")
+	butt2.Initialize("butt2")
+	butt3.Initialize("butt3")
+	butt.Enabled=True
+	butt2.Enabled=True
+	butt3.Enabled=True
+	butt.Visible=True
+	butt.Typeface=cfont
+	butt2.Typeface=cfont
+	butt3.Typeface=cfont
+	butt.TextSize=13
+	butt2.TextSize=13
+	butt3.TextSize=13
+	butt.TextColor=mcl.md_white_1000
+	butt2.TextColor=Colors.black
+	butt3.TextColor=Colors.black
+	'pnl.Elevation=10dip
+	butt.Text="Backup"
+	butt2.Text="Start"
+	butt3.Text="Share"
+	butt.ButtonColor=Colors.ARGB(185,25,118,210)
+	butt2.ButtonColor=Colors.ARGB(185,25,118,210)
+	butt3.ButtonColor=Colors.ARGB(185,25,118,210)
+	Dim ib As BitmapDrawable
+	ib.Initialize(TextToBitmap(Chr(0xE192),20))
+	Dim ibb As Label
+	ibb.Initialize("")
+	ibb.TextSize=16
+	ibb.Typeface=cfont
+	ibb.Gravity=Gravity.LEFT
+	ibb.TextColor=mcl.md_amber_700
+	For i = 0 To extra.Size-1
+		If dtime.ContainsKey(ID) Then
+			update.Text="Date/Time: "&dtime.GetSimple(ID)
+			ibb.Text="Backup Info:"
+			lbl.Text="size: "&FormatFileSize(File.Size(GetParentPath(GetSourceDir(GetActivitiesInfo(ID))),GetFileName(GetSourceDir(GetActivitiesInfo(ID)))))
+			iiv.Text="SD: "&datas.GetSimple("0")'GetParentPath(GetSourceDir(GetActivitiesInfo(ID)))&"/"
+		Else
+			update.Text="-/-"
+			iiv.Text="Folder: -/-"
+			ibb.Text="No Archived Backup found !"
+			lbl.Text="Size: -/-"
+		End If
+		If ID =extra.Get(i) Then
+			finish.Clear
+			finish.Add(ID)
+			pnlDetails.AddView(ibb, 0dip, 0,pnl.Width-1dip, 20dip)
+			pnlDetails.AddView(update, 0dip, ibb.Height+1dip, 95%x, 25dip)
+			pnlDetails.AddView(lbl, 0dip, update.Height+ibb.Height+1dip, 95%x, 25dip)
+			pnlDetails.AddView(iiv, 0dip, update.Height+lbl.Height+20dip,98%x, 55dip)
+			pnlDetails.AddView(butt2, 0dip, iiv.Height+lbl.Height+10dip, 90dip, 45dip)
+			pnlDetails.AddView(butt, 90dip, iiv.Height+lbl.Height+10dip, 90dip, 45dip)
+			pnlDetails.AddView(butt3, 180dip, iiv.Height+lbl.Height+10dip, 90dip, 45dip)
+		End If 
+		lst.ExtendItem(ID, pnlDetails, 140dip)
+	Next
+	
+End Sub
+
+Sub lst_Click(pnl As Panel, ID As Object)
+	Dim lbl As Label
+	lbl = pnl.GetView(1)
+	If lst.HasExtraContent And lst.ExtendedItemID = ID Then
+		' We collapse the clicked item if this item is the extended item
+		lst.CollapseItem
+	Else
+		' We expand the clicked item
+	
+		ExpandItem(pnl, ID)
+	End If
+	finish.Clear
+	finish.Add(ID)
+End Sub
+
+Sub butt_Click
+	ab1_Click
+End Sub
+
+Sub TextToBitmap (s As String, FontSize As Float) As Bitmap
+	Dim lblfont As Label
+	lblfont.Initialize("")
+	lblfont.Text=s
+	Dim bmp As Bitmap
+	bmp.InitializeMutable(32dip, 32dip)
+	Dim cvs As Canvas
+	cvs.Initialize2(bmp)
+	Dim h As Double = cvs.MeasureStringHeight(s, lblfont.Typeface, FontSize)
+	cvs.DrawText(s, bmp.Width / 2, bmp.Height / 2 + h / 2, lblfont.Typeface, FontSize, Colors.White, "CENTER")
+	Return bmp
+End Sub
+Sub put_pack( pname As String )
+	Dim ob1 As Object
+	ob1=pname 
+	finish.Clear
+	finish.Add(pname)
+	'ListView1_ItemClick(ob1)
+	ab1_Click
 End Sub
 
 Sub pak_info(path As String)
@@ -660,35 +1592,6 @@ Sub pak_info(path As String)
 
 End Sub
 
-Sub SetDivider(lv As ListView, Color As Int, Height As Int)
-	Dim r As Reflector
-	r.Target = lv
-	Dim CD As ColorDrawable
-	CD.Initialize(Color, 0)
-	r.RunMethod4("setDivider", Array As Object(CD), Array As String("android.graphics.drawable.Drawable"))
-	r.RunMethod2("setDividerHeight", Height, "java.lang.int")
-End Sub
-
-Sub GetPermissions(Package As String) As String()
-	Dim r As Reflector
-	r.Target = r.GetContext
-	r.Target = r.RunMethod("getPackageManager")
-	r.Target = r.RunMethod4("getPackageInfo", Array As Object(Package, 0x00001000), _
-      Array As String("java.lang.String", "java.lang.int"))
-	Dim permissions() As String
-	permissions = r.GetField("requestedPermissions")
-	If permissions = Null Then
-		Dim permissions(0) As String
-	End If
-	Return permissions
-End Sub
-Sub ConvertToTimeFormat(ms As Int) As String
-	Dim seconds, minutes As Int
-	seconds = Round(ms / 1000)
-	minutes = Floor(seconds / 60)
-	seconds = seconds Mod 60
-	Return NumberFormat(minutes, 1, 0) & ":" & NumberFormat(seconds, 2, 0) 'ex: 3:05
-End Sub
 Sub minutes_hours ( ms As Int ) As String
 	Dim val,hours,minutes As Int
 	val = ms
@@ -775,3 +1678,11 @@ public boolean _onCreateOptionsMenu(android.view.Menu menu) {
         return false;
 }
 #End If
+
+
+
+
+
+
+
+
