@@ -62,7 +62,7 @@ File43=page1.bal
 File44=page3.bal
 File45=reswit.bal
 File46=right.bal
-NumberOfLibraries=42
+NumberOfLibraries=43
 Library1=core
 Library2=appcompat
 Library3=materialcolors
@@ -105,6 +105,7 @@ Library39=administrator
 Library40=oslibrary
 Library41=slidingmenuwrapper
 Library42=storage
+Library43=abzipunzip
 @EndOfDesignText@
 'APK Backup(Pro) v 1.9.4 Source Code by D.Trojan (trOw)
 #Region  Project Attributes 
@@ -128,12 +129,12 @@ Library42=storage
 #End Region
 
 Sub Process_Globals
-	
 	Private pak As PackageManager
 	Dim time,date As String 
 	Dim dex As Timer
 	Dim ex As Timer 
 	Dim exa As Timer 
+	Dim zipex As Timer 
 End Sub
 
 Sub Globals
@@ -336,13 +337,16 @@ Sub Activity_Create(FirstTime As Boolean)
 	ex.Initialize("ex",1000)
 	exa.Initialize("exa",1000)
 	dex.Initialize("dex",1000)
+	zipex.Initialize("zipex",1000)
 	dex.Enabled=False 
 	exa.Enabled=False 
 	ex.Interval=40
 	dex.Interval=40
+	zipex.Interval=40
 	exa.Interval=1
 	tcount=0
 	ex.Enabled=False
+	zipex.Enabled=False 
 	pn.Initialize
 	
 	If FirstTime Then 
@@ -427,10 +431,10 @@ Sub Activity_CreateMenu(menu As ACMenu)
 End Sub
 Sub menu_two
 	lvMenu.Clear
-	lvMenu.AddTwoLinesAndBitmap2("Explorer","explore your backup folder",LoadBitmap(File.DirAssets,"ic_folder_open_white_36dp.png"),"0")
-	lvMenu.AddTwoLinesAndBitmap2("Backup All","export all user apps at once",LoadBitmap(File.DirAssets,"ic_cached_white_36dp.png"),"1")
-	lvMenu.AddTwoLinesAndBitmap2("Clear All","deletes all backup files",LoadBitmap(File.DirAssets,"ic_block_white_36dp.png"),"2")
-	lvMenu.AddTwoLinesAndBitmap2("Settings Panel","open the Main-settings",LoadBitmap(File.DirAssets,"ic_exit_to_app_white_48dp.png"),"3")
+	lvMenu.AddTwoLinesAndBitmap2("Explorer","explore your backuped App´s",LoadBitmap(File.DirAssets,"ic_folder_open_white_36dp.png"),"0")
+	lvMenu.AddTwoLinesAndBitmap2("Backup all..","export all user apps at once",LoadBitmap(File.DirAssets,"ic_cached_white_36dp.png"),"1")
+	lvMenu.AddTwoLinesAndBitmap2("Delete Backup´s..","deletes all backup files",LoadBitmap(File.DirAssets,"ic_block_white_36dp.png"),"2")
+	lvMenu.AddTwoLinesAndBitmap2("Settings","open the Main-settings",LoadBitmap(File.DirAssets,"ic_exit_to_app_white_48dp.png"),"3")
 	menu_three
 End Sub
 
@@ -446,7 +450,7 @@ Sub menu_three
 	eim.Initialize(File.DirAssets,"ic_share_white_36dp.png")
 	him.Initialize(File.DirAssets,"ic_info_outline_white_36dp.png")
 	rvmenu.Clear
-	rvmenu.AddTwoLinesAndBitmap2("Share","share"&pak.GetApplicationLabel("com.apkbackup.de"),eim,"0")
+	rvmenu.AddTwoLinesAndBitmap2("Share","Share "&pak.GetApplicationLabel("com.apkbackup.de"),eim,"0")
 	rvmenu.AddTwoLinesAndBitmap2("Help","FAQ and recent Info´s",fim,"1")
 	rvmenu.AddTwoLinesAndBitmap2("About","APK Backup(Pro) version etc..",him,"2")
 	dir=File.dirrootexternal&"/APEX/backups"
@@ -464,14 +468,38 @@ Sub rvmenu_ItemClick (Position As Int, Value As Object)
 			app_share
 			'log("toastmessage")
 		Case 1
-			ToastMessageShow("Sorry coming on next Update ;(",False)
+			Dim url As String="http://sulomedia.de/index.php/2017/06/30/faq-and-help-page/"
+			Dim wv As WebView
+			wv.Initialize("wv")
+			wv.JavaScriptEnabled=True
+			wv.ZoomEnabled=True
+			Dim wl As CustomDialog2
+			wl.AddView(wv,96%x,90%y)
+			'Activity.AddView(wv,2%x,2%y,98%x,99%y)
+			wv.LoadUrl(url)
 			sm.HideMenus
+			wl.Show("FAQ/Help Page","reload","","close",LoadBitmap(File.DirAssets,"ic_assignment_turned_in_white_36dp.png"))
 			'log("developer Info")
+			If Not(wl.Response=DialogResponse.NEGATIVE) Then 
+				wv.LoadUrl(url)
+				wl.Show("FAQ/Help Page","reload","","close",LoadBitmap(File.DirAssets,"ic_assignment_turned_in_white_36dp.png"))
+				Else 
+					ToastMessageShow("closed",False)
+			End If
 		Case 2 
 			CallSub(Me,dev_info)
 			sm.HideMenus
 	End Select
 				
+End Sub
+
+Sub wv_PageFinished (Url As String)
+	ToastMessageShow("Page 100% loaded",False)
+End Sub
+Sub wv_OverrideUrl (Url As String) As Boolean
+	If Url=Url Then 
+		ProgressDialogShow("loading..")
+	End If
 End Sub
 Sub lvmenu_ItemClick (Position As Int, Value As Object)
 	Select Value
@@ -529,9 +557,11 @@ End Sub
 Sub acs_onCheckedChanged(tag As Object, checked As Boolean)
 	Select checked
 		Case checked=True 
-			ToastMessageShow("Service Options coming on next Update",False)
+			StartService(fileobserve)
+			ToastMessageShow("File Service Start..",False)
 		Case checked=False
-			ToastMessageShow("coming soon...",False)
+			StopService(fileobserve)
+			ToastMessageShow("File Service stop!",False)
 	End Select
 	
 End Sub
@@ -563,11 +593,6 @@ Sub pre_start
 		dcont.Text="Backup all unsaved App´s at once..("&FormatFileSize(size*1024*10)&")"
 	Next
 	Builder.Title(dlab.text).TitleColor(mcl.md_black_1000).Icon(ico).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(dcont.Text).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(False).AutoDismiss(True).PositiveText("Start").PositiveColor(mcl.md_amber_700).NeutralText("Cancel").NeutralColor(mcl.md_black_1000)
-	
-	
-	
-	
-	
 	deldia=Builder.Show
 	deldia.Show
 	'ToastMessageShow("sorry module is coming soon..",False)
@@ -575,6 +600,7 @@ End Sub
 Sub exadia_ButtonPressed (Dialog As MaterialDialog, Action As String)
 	Select Action
 		Case Dialog.ACTION_POSITIVE
+			ProgressDialogShow("please wait...")
 			ex_start
 		Case Dialog.ACTION_NEGATIVE
 			ToastMessageShow("canceled", False)
@@ -583,6 +609,7 @@ Sub exadia_ButtonPressed (Dialog As MaterialDialog, Action As String)
 	End Select
 End Sub
 Sub ex_start
+	ProgressDialogShow("please wait...")
 	Dim Builder As MaterialDialogBuilder
 	Dim maxs As Int 
 	dir=datas.GetSimple("0")
@@ -594,7 +621,7 @@ Sub ex_start
 	icon.Initialize(LoadBitmap(File.DirAssets,"ic_assignment_black_36dp.png"))
 	Builder.Initialize("exap")
 	Builder.Title("Backup All:").TitleColor(mcl.md_black_1000).TitleGravity(Builder.GRAVITY_START).Content(Label4.text).ContentColor(Colors.DarkGray).Icon(icon).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(False).AutoDismiss(True).Build
-	Builder.progress(False,maxs)
+	Builder.progress2(False,maxs,True)
 
 	exa.Enabled=True
 	deldia=Builder.Show
@@ -616,6 +643,7 @@ Sub exa_Tick
 		Animator.setanimati("slide_from_left","slide_to_left")
 	Else 
 		deldia.IncrementProgress(1)
+		ProgressDialogHide
 		file_copy
 	End If
 End Sub
@@ -635,15 +663,19 @@ Sub file_copy
 		vers=pak.GetVersionName(s)
 		p=GetParentPath(GetSourceDir(GetActivitiesInfo(s)))
 		b=GetFileName(GetSourceDir(GetActivitiesInfo(s)))
+
 		dir=datas.GetSimple("0")
 		size= File.Size(GetParentPath(GetSourceDir(GetActivitiesInfo(exalist.Get(h)))),GetFileName(GetSourceDir(GetActivitiesInfo(exalist.Get(h)))))
-		If File.Exists(dir,fname&"_"&vers&".apk") Then
-			deldia.Content="file exist"&fname
-		Else	
+		If Not(File.Exists(dir,fname&"_"&vers&".apk")) Then	
 			dtime.DeleteAll
 			File.Copy(p,b,dir,fname&"_"&vers&".apk")
 			'Log(BytesToFile(p,fname&"_"&vers&".apk",buf))
 			deldia.Content="copying..."&fname&"_"&vers&".apk"
+		Else 
+			For Each b As String In exalist
+			deldia.Content="file exist"&b
+			
+			Next
 		End If
 	Next
 End Sub
@@ -678,9 +710,6 @@ Sub cldia_ButtonPressed (Dialog As MaterialDialog, Action As String)
 	End Select
 	
 End Sub
-
-
-
 
 Sub path_explorer
 	svList.SetVisibleAnimated(400,False)
@@ -747,16 +776,7 @@ Sub delete_files
 	df=Builder.Show
 	df.Show
 	dex.Enabled=True
-	For Each lf As String In dlist
-		Label4.Text=lf
-	Next
-	For i = 0 To dlist.Size-1
-		File.Delete(dir,dlist.Get(i))
-	Next
-	For Each s As String In dtime.ListKeys
-		dtime.Remove(s)
-		bcount.Remove(s)
-	Next 
+	
 End Sub
 Sub dex_Tick
 	If Not(df.IsShowing) Then
@@ -768,12 +788,30 @@ Sub dex_Tick
 		df.Content = "Done! Please wait.."
 		StartActivity(swit)
 		df.Dismiss
+		file_check
 		Activity.Finish
 		Animator.setanimati("slide_from_left","slide_to_left")
 	Else
 		df.IncrementProgress(1)
+		file_clear
 	End If
 End Sub
+Sub file_clear
+	Dim dlist As List
+	Dim maxs As Int
+	dlist.Initialize
+	dir=datas.GetSimple("0")
+	dlist=File.ListFiles(dir)
+	maxs=dlist.Size	
+	For i = 0 To dlist.Size-1
+		File.Delete(dir,dlist.Get(i))
+			Label4.Text=dlist.Get(i)
+		dtime.Remove(dlist.Get(i))
+		bcount.Remove(dlist.Get(i))
+		file_check
+	Next
+End Sub
+
 Sub Dialog2_ButtonPressed (Dialog As MaterialDialog, Action As String)
 	Select Action
 		Case Dialog.ACTION_POSITIVE
@@ -802,7 +840,7 @@ Sub dev_info
 	l1.Typeface=Typeface.LoadFromAssets("OpenSans.ttf")
 	l2.Typeface=Typeface.LoadFromAssets("OpenSans.ttf")
 	l2.Text="About "&pak.GetApplicationLabel("com.apkbackup.de")
-	l1.Text=pak.GetApplicationLabel("com.apkbackup.de")&", Version: "&pak.GetVersionName("com.apkbackup.de")&" | Build: "&pak.GetVersionCode("com.apkbackup.de")&". Code/Design by D. Trojan, www.battcatt.bplaced.net for Support/Infos. APK Backup(Pro) by APEX All rights reserved ©2017"
+	l1.Text=pak.GetApplicationLabel("com.apkbackup.de")&", Version: "&pak.GetVersionName("com.apkbackup.de")&" | Build: "&pak.GetVersionCode("com.apkbackup.de")&". Code/Design by D. Trojan, www.sulomedia.de for Support/Infos. APK Backup(Pro) by SuloMedia ©2017"
 	pnl.AddView(l1,25dip,1dip,88%x,98%y)
 	Dim infodia As MaterialDialog
 	Dim info As BitmapDrawable
@@ -823,8 +861,8 @@ Sub app_share
 	Dim i As Intent
 	i.Initialize(i.ACTION_SEND, "")
 	i.SetType("text/plain")
-	i.PutExtra("android.intent.extra.TEXT", "https://www.amazon.com/dp/B0754TM922/ref=sr_1_1?ie=UTF8&qid=1504040405&sr=8-1&keywords=APK+Backup%28Pro%29")
-	i.PutExtra("android.intent.extra.SUBJECT", "APK Backup (Pro) is a cost-free solution for app management on your Android smartphone. Get it on Amazone")
+	i.PutExtra("android.intent.extra.TEXT", "https://www.apk-backup-pro.en.uptodown.com/android")
+	i.PutExtra("android.intent.extra.SUBJECT", "APK Backup(Pro) is a free solution for App management on your Android Smartphone. Get it on UpToDown Store")
 	StartActivity(i)
 End Sub
 
@@ -994,8 +1032,7 @@ Sub item_show
 	icon.Gravity=Gravity.CENTER
 	Dim Builder As MaterialDialogBuilder
 	Builder.Initialize("idia")
-	Builder.Title(dlab.text).TitleColor(mcl.md_black_1000).Icon(ico).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(dcont.Text).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(True).AutoDismiss(False).NeutralText("Ok").NeutralColor(mcl.md_black_1000).ItemsCallback.Build
-	Builder.ForceStacking(True)
+	Builder.Title(dlab.text).TitleColor(mcl.md_black_1000).Icon(ico).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(dcont.Text).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(True).AutoDismiss(False).NeutralText("Ok").NeutralColor(mcl.md_black_1000).PositiveText("Zip Archive").ItemsCallback.AlwaysCallSingleChoiceCallback
 	For  i =0 To  dlist.Size-1
 		imi.Initialize(icon,dlist.Get(i))
 		Builder.AddSimpleItem(imi)
@@ -1033,13 +1070,71 @@ End Sub
 Sub idia_ButtonPressed (Dialog As MaterialDialog, Action As String)
 	Select Action
 		Case Dialog.ACTION_POSITIVE
-			
+			Dialog.Dismiss
+			zip_pan
 		Case Dialog.ACTION_NEGATIVE
 			'log"Negative Button pressed")
 		Case Dialog.ACTION_NEUTRAL
 			'log"Neutral Button pressed")
 			Dialog.Dismiss
 	End Select
+	
+End Sub
+
+Sub zip_pan
+	Dim dlist As List
+	dlist.Initialize
+	dir=datas.GetSimple("0")
+	Dim a1,sum As Int 
+	Label4.Text="compressing backup-archive to zip-archive"
+	Label4.TextColor=mcl.md_black_1000
+	Label4.TextSize=12
+	Label4.Gravity=Gravity.FILL
+	Label4.Typeface=superfont
+	Dim Builder As MaterialDialogBuilder
+	Builder.Initialize("Dialog")
+	Builder.Title("export -> ZiP").TitleColor(mcl.md_blue_A400).Icon(icon).LimitIconToDefaultSize.Theme(Builder.THEME_LIGHT).Content(Label4.Text).ContentLineSpacing(1).ContentColor(mcl.md_black_1000).Cancelable(False).AutoDismiss(True).Build
+	For g = 0 To dlist.Size-1
+		a1=File.Size(dir,dlist.Get(g))
+		Log(a1)
+		Next 
+	sum=a1*1024*10
+	Builder.progress2(False,sum,True)
+	pdia=Builder.Show
+	pdia.Show
+	zipex.Enabled=True
+End Sub
+
+Sub zipex_Tick
+	
+	If Not(pdia.IsShowing) Then
+		exa.Enabled = False
+		Return
+	End If
+	If pdia.CurrentProgress= pdia.MaxProgress-1 Then zip_ex 
+	If pdia.CurrentProgress = pdia.MaxProgress Then
+		zipex.Enabled = False
+		pdia.Content = "Done! Zip-file saved to: "&dir 
+		'StartActivity(swit)
+		'Activity.Finish
+		'Animator.setanimati("slide_from_left","slide_to_left")
+		pdia.Dismiss
+	Else
+		pdia.IncrementProgress(1)
+	End If
+End Sub
+Sub zip_ex
+	dir=datas.GetSimple("0")
+	Dim zip As ABZipUnzip
+	Dim zipc As ABZipContent
+	Dim dlist As List 
+	dlist.Initialize
+	dlist.Clear
+	dlist=File.ListFiles(dir)
+	For i = 0 To dlist.Size-1
+		Log("ziping..")
+		zip.ABZipDirectory(File.DirRootExternal&"APEX",File.DirRootExternal&date&"_"&time&"_backup_archive.zip")
+	Next
 	
 End Sub
 
